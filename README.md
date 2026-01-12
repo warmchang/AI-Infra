@@ -96,6 +96,10 @@ where to focus their learning.
 
 - [Observability Overview](./docs/observability/README.md)
 
+#### AI Agents
+
+- [AI Agent Platforms and Frameworks](./docs/agents/README.md)
+
 #### Blog
 
 - [Blog Overview](./docs/blog/README.md)
@@ -244,6 +248,10 @@ topics: [Model Architectures](./docs/inference/model-architectures.md) |
 
 ### 🧩 3. AI Gateway & Agentic Workflow
 
+AI Gateways provide routing, load balancing, and management for LLM APIs,
+while Agentic Workflow platforms enable building autonomous AI systems that
+can perceive, reason, and act.
+
 - **Projects to Learn:**
   - AI Gateway:
     - [`Gateway API Inference Extension`](https://github.com/kubernetes-sigs/gateway-api-inference-extension)
@@ -254,13 +262,45 @@ topics: [Model Architectures](./docs/inference/model-architectures.md) |
     - [`Higress`](https://github.com/alibaba/higress): Alibaba
     - [`Kong`](https://github.com/Kong/kong)
     - [`Semantic Router`](https://github.com/vllm-project/semantic-router): vLLM Project
-  - Agentic Workflow:
-    - [`Dify`](https://github.com/langgenius/dify)
-    - [`KAgent`](https://github.com/kagent-dev/kagent): CNCF Sandbox
-    - [`Dagger`](https://github.com/dagger/dagger)
+  - Native Agent Kits:
+    - **VolcEngine Native AI Agent Kit** (ByteDance): Comprehensive platform
+      with MCP support, elasticity, memory management, and full observability
+  - Kubernetes-Native Agent Platforms:
+    - [`KAgent`](https://github.com/kagent-dev/kagent): CNCF Sandbox - K8s-native
+      agent orchestration
+    - [`Volcano AgentCube`](https://github.com/volcano-sh/agentcube): Agent
+      orchestration in Volcano ecosystem
+    - [`Kubernetes SIG Agent Sandbox`](https://github.com/kubernetes-sigs/agent-sandbox):
+      Secure sandbox for AI agents
+    - [`Agent Infra Sandbox`](https://github.com/agent-infra/sandbox): Community
+      sandbox infrastructure
+    - [`OpenKruise Agents`](https://github.com/openkruise/agents): Application
+      lifecycle agent operations
+  - Agent Development Frameworks:
+    - [`Dify`](https://github.com/langgenius/dify): LLMOps platform for
+      agent applications
+    - [`AgentScope`](https://github.com/agentscope-ai/agentscope): Multi-agent
+      development framework
+    - [`Dapr Agents`](https://github.com/dapr/dapr-agents): Cloud-native
+      agent primitives with Dapr
+    - [`Coze Studio`](https://github.com/coze-dev/coze-studio): Visual
+      agent design environment
+    - [`Open-AutoGLM`](https://github.com/zai-org/Open-AutoGLM): Autonomous
+      agent framework
+    - [`Spring AI Alibaba`](https://github.com/alibaba/spring-ai-alibaba):
+      Spring Boot agent integration
+    - [`Google ADK-Go`](https://github.com/google/adk-go): Go-native agent
+      development kit
+    - [`Dagger`](https://github.com/dagger/dagger): Programmable CI/CD
+      for agents
+  - Agent Infrastructure:
     - [`kube-agentic-networking`](https://github.com/kubernetes-sigs/kube-agentic-networking):
       Agentic networking policies and governance for agents and tools in
       Kubernetes
+    - **Model Context Protocol (MCP)**: Agent-to-agent communication standard
+      (CNCF Tech Radar 2025: Adopt)
+    - **Agent2Agent (A2A)**: Direct agent communication patterns
+    - **ACP (Agent Communication Protocol)**: Multi-agent communication standard
   - Serverless:
     - [`Knative`](https://github.com/knative/serving): Serverless solution, like [llama stack use case](https://github.com/knative/docs/blob/071fc774faa343ea996713a8750d78fc9225356c/docs/blog/articles/ai_functions_llama_stack.md).
 
@@ -268,6 +308,21 @@ topics: [Model Architectures](./docs/inference/model-architectures.md) |
   - API orchestration for LLMs
   - Prompt routing and A/B testing
   - RAG workflows, vector DB integration
+  - Agent architecture patterns (perception, reasoning, action, memory)
+  - Multi-agent collaboration and communication
+  - Agent security and sandboxing
+  - MCP and agent protocol standards
+  - Agent observability and monitoring
+
+- **Community Initiatives:**
+  - [CNCF Agentic System Initiative](https://github.com/cncf/toc/issues/1746)
+  - [WG AI Integration](https://github.com/kubernetes/community/blob/master/wg-ai-integration/charter.md)
+  - [CNCF Tech Radar 2025](https://radar.cncf.io/) - Agentic AI Platforms section
+
+**See [AI Agent Platforms Guide](./docs/agents/README.md)** for comprehensive
+coverage of agent platforms, frameworks, MCP protocol, agent infrastructure
+components, and detailed learning paths for building and deploying AI agents
+on Kubernetes.
 
 ---
 
@@ -375,8 +430,12 @@ We welcome contributions to improve this landscape and path! Whether it's a new 
 - Kubernetes [WG AI Gateway](https://github.com/kubernetes/community/blob/master/wg-ai-gateway/README.md)
 - Kubernetes [WG AI Conformance](https://github.com/kubernetes/community/blob/master/wg-ai-conformance/README.md)
 - Kubernetes [WG AI Integration](https://github.com/kubernetes/community/blob/master/wg-ai-integration/README.md)
+- [CNCF Agentic System Initiative](https://github.com/cncf/toc/issues/1746)
+- [CNCF Tech Radar 2025](https://radar.cncf.io/) - Agentic AI Platforms
 
 If you have some resources about AI Infra, please share them in [#8](https://github.com/pacoxu/AI-Infra/issues/8).
+
+For AI Agent projects and developments, see [#30](https://github.com/pacoxu/AI-Infra/issues/30).
 
 ### [Conferences](https://github.com/pacoxu/developers-conferences-agenda)
 
