@@ -94,6 +94,10 @@ tags: ai-infrastructure, kubernetes, learning-path, landscape
 
 - [可观测性概述](./docs/observability/README.md)
 
+#### AI 智能体
+
+- [AI 智能体平台与框架](./docs/agents/README.md)
+
 #### 博客
 
 - [博客概述](./docs/blog/README.md)
@@ -238,6 +242,9 @@ Kthena, KServe）、无服务器解决方案（Knative, AWS SageMaker）的全�
 
 ### 🧩 3. AI 网关与智能体工作流
 
+AI 网关为 LLM API 提供路由、负载均衡和管理，
+而智能体工作流平台使构建能够感知、推理和行动的自主 AI 系统成为可能。
+
 - **学习项目:**
   - AI 网关:
     - [`Gateway API Inference Extension`](https://github.com/kubernetes-sigs/gateway-api-inference-extension)
@@ -248,12 +255,41 @@ Kthena, KServe）、无服务器解决方案（Knative, AWS SageMaker）的全�
     - [`Higress`](https://github.com/alibaba/higress): 阿里巴巴
     - [`Kong`](https://github.com/Kong/kong)
     - [`Semantic Router`](https://github.com/vllm-project/semantic-router): vLLM 项目
-  - 智能体工作流:
-    - [`Dify`](https://github.com/langgenius/dify)
-    - [`KAgent`](https://github.com/kagent-dev/kagent): CNCF Sandbox
-    - [`Dagger`](https://github.com/dagger/dagger)
+  - 原生智能体套件:
+    - **火山引擎原生 AI 智能体套件** (字节跳动): 全面的平台，支持 MCP、
+      弹性扩缩容、内存管理和全链路可观测性
+  - Kubernetes 原生智能体平台:
+    - [`KAgent`](https://github.com/kagent-dev/kagent): CNCF Sandbox - K8s 原生
+      智能体编排
+    - [`Volcano AgentCube`](https://github.com/volcano-sh/agentcube): Volcano
+      生态系统中的智能体编排
+    - [`Kubernetes SIG Agent Sandbox`](https://github.com/kubernetes-sigs/agent-sandbox):
+      AI 智能体的安全沙箱
+    - [`Agent Infra Sandbox`](https://github.com/agent-infra/sandbox): 社区
+      沙箱基础设施
+    - [`OpenKruise Agents`](https://github.com/openkruise/agents): 应用
+      生命周期智能体操作
+  - 智能体开发框架:
+    - [`Dify`](https://github.com/langgenius/dify): 智能体应用的 LLMOps 平台
+    - [`AgentScope`](https://github.com/agentscope-ai/agentscope): 多智能体
+      开发框架
+    - [`Dapr Agents`](https://github.com/dapr/dapr-agents): 使用 Dapr 的
+      云原生智能体原语
+    - [`Coze Studio`](https://github.com/coze-dev/coze-studio): 可视化
+      智能体设计环境
+    - [`Open-AutoGLM`](https://github.com/zai-org/Open-AutoGLM): 自主
+      智能体框架
+    - [`Spring AI Alibaba`](https://github.com/alibaba/spring-ai-alibaba):
+      Spring Boot 智能体集成
+    - [`Google ADK-Go`](https://github.com/google/adk-go): Go 原生智能体
+      开发工具包
+    - [`Dagger`](https://github.com/dagger/dagger): 智能体的可编程 CI/CD
+  - 智能体基础设施:
     - [`kube-agentic-networking`](https://github.com/kubernetes-sigs/kube-agentic-networking):
       Kubernetes 中智能体和工具的网络策略与治理
+    - **模型上下文协议 (MCP)**: 智能体间通信标准 (CNCF Tech Radar 2025: Adopt)
+    - **Agent2Agent (A2A)**: 直接智能体通信模式
+    - **ACP (智能体通信协议)**: 多智能体通信标准
   - 无服务器:
     - [`Knative`](https://github.com/knative/serving): 无服务器解决方案，
       如 [llama stack 用例](https://github.com/knative/docs/blob/071fc774faa343ea996713a8750d78fc9225356c/docs/blog/articles/ai_functions_llama_stack.md)
@@ -262,6 +298,20 @@ Kthena, KServe）、无服务器解决方案（Knative, AWS SageMaker）的全�
   - LLM 的 API 编排
   - 提示词路由和 A/B 测试
   - RAG 工作流、向量数据库集成
+  - 智能体架构模式（感知、推理、行动、记忆）
+  - 多智能体协作与通信
+  - 智能体安全与沙箱
+  - MCP 和智能体协议标准
+  - 智能体可观测性与监控
+
+- **社区倡议:**
+  - [CNCF 智能体系统倡议](https://github.com/cncf/toc/issues/1746)
+  - [WG AI Integration](https://github.com/kubernetes/community/blob/master/wg-ai-integration/charter.md)
+  - [CNCF Tech Radar 2025](https://radar.cncf.io/) - 智能体 AI 平台部分
+
+**参见 [AI 智能体平台指南](./docs/agents/README.md)**，全面了解智能体平台、
+框架、MCP 协议、智能体基础设施组件，以及在 Kubernetes 上构建和部署
+AI 智能体的详细学习路径。
 
 ---
 
@@ -362,8 +412,12 @@ LLM 评估平台（TruLens, Deepchecks）的全面介绍。
 - Kubernetes [WG AI Gateway](https://github.com/kubernetes/community/blob/master/wg-ai-gateway/README.md)
 - Kubernetes [WG AI Conformance](https://github.com/kubernetes/community/blob/master/wg-ai-conformance/README.md)
 - Kubernetes [WG AI Integration](https://github.com/kubernetes/community/blob/master/wg-ai-integration/README.md)
+- [CNCF 智能体系统倡议](https://github.com/cncf/toc/issues/1746)
+- [CNCF Tech Radar 2025](https://radar.cncf.io/) - 智能体 AI 平台
 
 如果您有关于 AI 基础设施的资源，请在 [#8](https://github.com/pacoxu/AI-Infra/issues/8) 中分享。
+
+关于 AI 智能体项目和进展，请参见 [#30](https://github.com/pacoxu/AI-Infra/issues/30)。
 
 ### [会议](https://github.com/pacoxu/developers-conferences-agenda)
 
