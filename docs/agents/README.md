@@ -504,6 +504,9 @@ Major AI model providers are making agents central to their platforms:
 - [AI Gateway & Agentic Workflow](../../README.md#-3-ai-gateway--agentic-workflow)
 - [Agent Sandbox and Isolation](../kubernetes/isolation.md#6-agent-sandbox-kubernetes-sig-project)
 - [Memory and Context Management](../inference/memory-context-db.md)
+- [LLM Inference Platforms](../inference/README.md) - For model deployment
+  platforms like Kaito, AIBrix, and OME that provide the inference backend
+  for agent systems
 
 ---
 
