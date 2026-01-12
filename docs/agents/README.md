@@ -462,21 +462,21 @@ Major AI model providers are making agents central to their platforms:
 
 ## RoadMap
 
-### Short-term (2025 Q1-Q2)
+### Short-term (2026 Q1-Q2)
 
 - [ ] Expand documentation for each major agent platform
 - [ ] Create practical guides for deploying agents on Kubernetes
 - [ ] Document MCP implementation patterns
 - [ ] Add agent security best practices
 
-### Medium-term (2025 Q3-Q4)
+### Medium-term (2026 Q3-Q4)
 
 - [ ] Multi-agent system patterns and architectures
 - [ ] Agent observability and monitoring guide
 - [ ] Integration patterns with AI Gateway solutions
 - [ ] Cost optimization strategies for agent workloads
 
-### Long-term (2026+)
+### Long-term (2027+)
 
 - [ ] Agent-native Kubernetes extensions
 - [ ] Advanced multi-agent orchestration
