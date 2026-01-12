@@ -1,7 +1,7 @@
 ---
 status: Active
 maintainer: pacoxu
-last_updated: 2025-10-29
+last_updated: 2026-01-12
 tags: repository, structure, documentation, organization
 ---
 
@@ -49,10 +49,12 @@ AI-Infra/
 │   │   ├── large-scale-experts.md    # Mixture of Experts (MoE) architectures
 │   │   ├── model-lifecycle.md        # Cold-start, sleep mode, offloading
 │   │   └── ome.md                    # OME Kubernetes operator
-│   └── training/                     # AI model training topics
+│   ├── training/                     # AI model training topics
 │       ├── README.md                 # Overview of training on Kubernetes
 │       ├── kubeflow.md               # Kubeflow training operators
 │       └── argocd.md                 # GitOps workflows with ArgoCD
+│   └── agents/                       # AI Agent platforms and frameworks
+│       └── README.md                 # Agent platforms, MCP, K8s-native agents
 └── .github/
     └── copilot-instructions.md       # AI assistant guidelines
 
@@ -116,6 +118,18 @@ AI-Infra/
 - `argocd.md` - GitOps workflows for training management
 
 **Cross-references**: Links to `../kubernetes/` for scheduling and resources
+
+#### 4. Agents (`docs/agents/`)
+
+**Purpose**: AI Agent platforms, frameworks, and infrastructure
+
+**Canonical Files**:
+
+- `README.md` - Overview of agent platforms, MCP protocol, Kubernetes-native
+  solutions
+
+**Cross-references**: Links to `../kubernetes/isolation.md` for sandboxing,
+`../inference/memory-context-db.md` for agent memory
 
 ### Assets (`diagrams/`)
 
