@@ -228,14 +228,14 @@ End-to-end platforms that span multiple MLOps categories:
   - Distributed training on Kubernetes
   - Gang scheduling for multi-node jobs
   - Integration with training operators (Kubeflow, Volcano)
-  - See [Training Guide](./README.md) for comprehensive coverage
+  - See [Training Guide](./README.md) for comprehensive coverage.
 
 - **Storage and Artifact Management:**
   - Persistent volumes for model storage
   - Object storage integration (S3, GCS, Azure Blob)
   - Caching strategies for datasets
   - See [Fluid](https://github.com/fluid-cloudnative/fluid) for data
-    orchestration
+    orchestration.
 
 ### Automation and CI/CD
 
@@ -243,7 +243,7 @@ End-to-end platforms that span multiple MLOps categories:
   - ArgoCD for declarative deployment
   - Automated retraining pipelines
   - Model versioning and rollback strategies
-  - See [ArgoCD Guide](./argocd.md)
+  - See [ArgoCD Guide](./argocd.md).
 
 - **Pipeline Orchestration:**
   - DAG-based workflows (Argo Workflows, KFP)
@@ -257,7 +257,7 @@ End-to-end platforms that span multiple MLOps categories:
   - Prediction accuracy and drift detection
   - Feature distribution monitoring
   - Model performance metrics (latency, throughput)
-  - See [Observability Guide](../observability/README.md)
+  - See [Observability Guide](../observability/README.md).
 
 - **Data Quality:**
   - Schema validation and constraints
@@ -384,7 +384,7 @@ End-to-end platforms that span multiple MLOps categories:
   - Specialized MLOps practices for large language models
   - Prompt engineering and versioning
   - LLM-specific monitoring and evaluation
-  - See [Inference Guide](../inference/README.md) for LLM serving
+  - See [Inference Guide](../inference/README.md) for LLM serving.
 
 - **Federated MLOps:**
   - Cross-cluster model training
