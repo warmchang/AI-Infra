@@ -91,6 +91,7 @@ where to focus their learning.
 - [Parallelism Strategies](./docs/training/parallelism.md)
 - [Kubeflow Training](./docs/training/kubeflow.md)
 - [ArgoCD for GitOps](./docs/training/argocd.md)
+- [MLOps](./docs/training/mlops.md)
 
 #### Observability
 
@@ -344,6 +345,7 @@ gang scheduling, and efficient resource management.
   - Storage optimization for checkpoints
   - **Pre-training large language models (MoE, DeepseekV3, Llama4)**
   - **Scaling experiments and cluster setup (AMD MI325)**
+  - **MLOps: Repeatable, auditable, and rollback-capable ML lifecycle**
 
 **See [Training Guide](./docs/training/README.md)** for comprehensive coverage of
 training operators (Kubeflow, Volcano, Kueue), ML platforms (Kubeflow
@@ -353,7 +355,8 @@ Detailed guides: [Transformers](./docs/training/transformers.md) |
 [PyTorch Ecosystem](./docs/training/pytorch-ecosystem.md) |
 [Pre-Training](./docs/training/pre-training.md) |
 [Parallelism Strategies](./docs/training/parallelism.md) |
-[Kubeflow](./docs/training/kubeflow.md) | [ArgoCD](./docs/training/argocd.md)
+[Kubeflow](./docs/training/kubeflow.md) | [ArgoCD](./docs/training/argocd.md) |
+[MLOps](./docs/training/mlops.md)
 
 ---
 

@@ -28,6 +28,7 @@ More details about specific topics:
   Parallel)](./parallelism.md)
 - [Kubeflow Training Operator and Trainer V2](./kubeflow.md)
 - [ArgoCD for GitOps Workflows](./argocd.md)
+- [MLOps: Machine Learning Operations Lifecycle](./mlops.md)
 
 ### Key Challenges at Scale
 
