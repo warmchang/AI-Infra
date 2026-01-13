@@ -1,7 +1,7 @@
 ---
 status: Active
 maintainer: pacoxu
-last_updated: 2026-01-07
+last_updated: 2026-01-12
 tags: blog, kubernetes, ai-infrastructure
 ---
 
@@ -9,6 +9,22 @@ tags: blog, kubernetes, ai-infrastructure
 
 This directory contains blog posts and articles about AI infrastructure,
 Kubernetes scheduling, and related topics.
+
+## 2026-01-12: KubeCon + CloudNativeCon Europe 2026 主题推荐
+
+- [KubeCon EU 2026 Recommendations (Chinese)](./2026-01-12/kubecon-eu-2026-recommendations_zh.md)
+
+A comprehensive guide to KubeCon + CloudNativeCon Europe 2026 with curated AI infrastructure session recommendations:
+
+- Translation of CNCF official announcement
+- Conference schedule links (main event and co-located events)
+- Four recommended AI infrastructure sessions:
+  - BYD's million-task scale journey with Argo Workflows (比亚迪百万任务规模实践)
+  - KV-Cache Tutorial: Building AI-Aware LLM Routing on Kubernetes
+  - Adaptive Routing for AI Inference Workloads
+  - Redefining LLM Inference SLI/SLO (重新定义推理 SLI/SLO)
+- Session details with time, location, speakers, and descriptions in Chinese
+- Links to conference schedules and registration
 
 ## 2026-01-07: Ambient Global Compute — Orchestrating the Non-Elastic Cloud
 
