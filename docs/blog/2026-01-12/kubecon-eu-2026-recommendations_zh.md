@@ -16,7 +16,7 @@ https://colocatedeventseu2026.sched.com/
 ## CNCF 发布 KubeCon + CloudNativeCon Europe 2026 日程
 
 **2025年12月10日** — Cloud Native Computing Foundation (CNCF) 正式公布了 KubeCon + CloudNativeCon Europe 2026
-的完整日程。本次大会将于 2026 年 3 月 23-26 日在英国伦敦举办，汇聚全球云原生社区的开发者、技术领袖和终端用户，
+的完整日程。本次大会将于 2026 年 3 月 23-26 日在荷兰阿姆斯特丹举办，汇聚全球云原生社区的开发者、技术领袖和终端用户，
 共同探讨云原生技术的最新进展和未来趋势。
 
 ### 会议亮点
@@ -42,8 +42,7 @@ KubeCon + CloudNativeCon Europe 2026 将延续往届的成功经验，为参会�
 
 ### 注册信息
 
-- **早鸟票：** 现已开放注册，早鸟优惠截止至 2026 年 2 月 28 日
-- **会议地点：** 英国伦敦 ExCeL London
+- **会议地点：** 荷兰 阿姆斯特丹
 - **会议日期：** 2026 年 3 月 23-26 日
 - **详细信息：** https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/
 
