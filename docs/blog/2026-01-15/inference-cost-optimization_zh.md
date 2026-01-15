@@ -25,7 +25,8 @@ alt="MaaS Provider Challenges" width="800">
 推理平台的每 Token 成本可以分解为三个核心维度：
 
 ```text
-每Token成本 = 推理的卡数 / (压测一小时的处理Token数量 × GPU的单位小时价格 ÷ GPU的整体资源利用率)
+每Token成本 = (推理的卡数 × GPU的单位小时价格) /
+             (压测一小时的处理Token数量 × GPU的整体资源利用率)
 ```
 
 这个公式揭示了成本优化的三个关键方向：
