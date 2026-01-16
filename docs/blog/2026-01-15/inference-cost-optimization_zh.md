@@ -18,7 +18,7 @@ canonical_path: docs/blog/2026-01-15/inference-cost-optimization_zh.md
 src="https://github.com/user-attachments/assets/32c3e6e9-c402-4e3d-85b8-c32b0dc420d3"
 alt="MaaS Provider Challenges" width="800">
 
-*图片来源：[KCD深圳 2024 演讲](https://www.bilibili.com/video/BV1dkUYBkEUc/)*
+*图片来源：[KCD 杭州 2025 演讲](https://www.bilibili.com/video/BV1dkUYBkEUc/)*
 
 ## 成本分析框架
 
