@@ -1,7 +1,7 @@
 ---
 status: Active
 maintainer: pacoxu
-last_updated: 2026-01-12
+last_updated: 2026-01-15
 tags: blog, kubernetes, ai-infrastructure
 ---
 
@@ -9,6 +9,33 @@ tags: blog, kubernetes, ai-infrastructure
 
 This directory contains blog posts and articles about AI infrastructure,
 Kubernetes scheduling, and related topics.
+
+## 2026-01-15: 推理平台实践与 AI 成本优化
+
+- [Inference Cost Optimization (Chinese)](./2026-01-15/inference-cost-optimization_zh.md)
+
+A comprehensive guide to cost optimization strategies for AI inference
+platforms (MaaS - Model as a Service):
+
+- Five core optimization strategies:
+  - **Reduce Invalid Tokens**: Prompt template management, output length
+    control, structured output constraints, Agent governance, RAG quality
+    improvement
+  - **Faster Computation**: Dynamic batching, parallelism, kernel optimization,
+    speculative decoding, quantization
+  - **Increase Utilization**: Backlog-based autoscaling, mixed deployment,
+    peak-valley strategies
+  - **Lower Resource Costs**: Hardware selection, deployment form optimization,
+    spot instances, next-gen hardware (CXL, AI-native storage)
+  - **Quality-Cost Strategies**: Intelligent routing, multi-level degradation,
+    tiered SLO & budget
+- Cluster scale optimization branches: Small (1-8 GPUs), Medium (8-64 GPUs),
+  Large (64+ GPUs)
+- Cost observability and implementation roadmap
+- References to NVIDIA Inference Context Memory Storage Platform and industry
+  best practices
+- Links to detailed inference documentation: caching, prefill-decode
+  disaggregation, model lifecycle, AIBrix platform
 
 ## 2026-01-12: KubeCon + CloudNativeCon Europe 2026 主题推荐
 
