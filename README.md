@@ -271,13 +271,21 @@ can perceive, reason, and act.
       agent orchestration
     - [`Volcano AgentCube`](https://github.com/volcano-sh/agentcube): Agent
       orchestration in Volcano ecosystem
+    - [`Volcano Kthena`](https://github.com/volcano-sh/kthena): Advanced agent
+      scheduling in Volcano
+    - [`KubeEdge Sedna`](https://github.com/kubeedge/sedna): Edge-cloud
+      collaborative AI with federated learning
     - [`Kubernetes SIG Agent Sandbox`](https://github.com/kubernetes-sigs/agent-sandbox):
       Secure sandbox for AI agents
     - [`Agent Infra Sandbox`](https://github.com/agent-infra/sandbox): Community
       sandbox infrastructure
     - [`OpenKruise Agents`](https://github.com/openkruise/agents): Application
       lifecycle agent operations
+    - [`ArgoCD Agent`](https://github.com/argoproj-labs/argocd-agent): Agent-based
+      GitOps deployments
   - Agent Development Frameworks:
+    - [`LangChain DeepAgents`](https://github.com/langchain-ai/deepagents):
+      Deep reasoning and multi-agent systems
     - [`Dify`](https://github.com/langgenius/dify): LLMOps platform for
       agent applications
     - [`AgentScope`](https://github.com/agentscope-ai/agentscope): Multi-agent
@@ -310,10 +318,13 @@ can perceive, reason, and act.
   - Prompt routing and A/B testing
   - RAG workflows, vector DB integration
   - Agent architecture patterns (perception, reasoning, action, memory)
+  - **Four-stage agent evolution** (human goals/planning → AI-assisted
+    planning → AI-learned planning → fully autonomous)
   - Multi-agent collaboration and communication
   - Agent security and sandboxing
   - MCP and agent protocol standards
   - Agent observability and monitoring
+  - Edge-cloud collaborative AI and federated learning
 
 - **Community Initiatives:**
   - [CNCF Agentic System Initiative](https://github.com/cncf/toc/issues/1746)

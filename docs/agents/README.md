@@ -37,6 +37,49 @@ simple model inference to autonomous systems that can:
 - Make decisions based on goals and constraints
 - Learn and adapt from feedback
 
+### Four-Stage Evolution of AI Agents
+
+According to **Professor Yang Qiang**, AI Agents (智能体) are expected to
+evolve through four distinct stages in 2026 and beyond:
+
+1. **Stage 1: Human-Defined Goals and Planning**
+   - Both objectives and execution plans are defined by humans
+   - Agents follow predetermined workflows
+   - Current most common implementation stage
+
+2. **Stage 2: AI-Assisted Planning**
+   - Goals are defined by humans
+   - Planning and execution strategies are assisted by AI
+   - AI helps optimize workflows but humans maintain control
+
+3. **Stage 3: AI-Learned Planning from Process Data**
+   - AI observes human workflows and process data
+   - Automatically learns and generates planning strategies
+   - Reduces human intervention in routine tasks
+
+4. **Stage 4: Fully Autonomous Agents**
+   - Ultimate stage: Both goals and planning are defined internally by LLMs
+   - Agents operate with true autonomy
+   - Self-directed decision-making and execution
+
+**Current State**: Most AI Agents today operate at Stages 1 and 2.
+
+**Economic Value Insight**: According to industry observations, the bottleneck
+for agents creating real economic value is not in the model capabilities
+themselves, but in:
+
+- **Environment**: Deploying models into diverse enterprise environments
+- **Education**: Training organizations to effectively use agent systems
+
+Even without further model improvements, significant economic benefits can be
+realized by deploying existing models across various enterprise scenarios. The
+focus should be on integration, deployment infrastructure, and organizational
+readiness.
+
+Reference: [Agent Evolution Theory - WeChat Article](https://mp.weixin.qq.com/s/NUx4n5j0ftxzZ0Sz29RjOQ)
+
+### Agent Landscape Categories
+
 The AI Agent landscape includes:
 
 1. **Native Agent Kits**: Cloud provider-specific platforms (e.g., VolcEngine)
@@ -145,6 +188,22 @@ management.
 
 **Maintained by**: Volcano community (CNCF Graduated project)
 
+### Volcano Kthena
+
+<a href="https://github.com/volcano-sh/kthena">`Kthena`</a>
+
+Kthena is another Volcano ecosystem project focusing on advanced agent
+scheduling and orchestration capabilities for AI workloads.
+
+**Key Features:**
+
+- Advanced agent workload scheduling
+- Integration with Volcano batch scheduling
+- Resource optimization for agent tasks
+- Multi-tenant agent execution support
+
+**Maintained by**: Volcano community (CNCF Graduated project)
+
 ### Kubernetes SIG Agent Sandbox
 
 <a href="https://github.com/kubernetes-sigs/agent-sandbox">`agent-sandbox`</a>
@@ -191,7 +250,50 @@ management in Kubernetes.
 - Advanced deployment strategies for agent workloads
 - In-place update support for agents
 
+### ArgoCD Agent
+
+<a href="https://github.com/argoproj-labs/argocd-agent">`argocd-agent`</a>
+
+ArgoCD Agent provides agent-based deployment capabilities for GitOps workflows,
+enabling secure and scalable application delivery across multiple clusters.
+
+**Key Features:**
+
+- Agent-based cluster registration
+- Secure pull-based deployment model
+- Multi-cluster GitOps management
+- Integration with ArgoCD ecosystem
+- Reduced control plane overhead
+
+**Status**: ArgoProj Labs (experimental)
+
+**Use Cases:**
+
+- Multi-cluster GitOps deployments
+- Edge cluster management
+- Secure deployments in restricted environments
+- Large-scale cluster fleet management
+
 ## Agent Development Frameworks
+
+### LangChain DeepAgents
+
+<a href="https://github.com/langchain-ai/deepagents">`deepagents`</a>
+
+DeepAgents is LangChain's framework for building sophisticated multi-agent
+systems with deep reasoning capabilities.
+
+**Key Features:**
+
+- Deep reasoning and planning for agents
+- Integration with LangChain ecosystem
+- Multi-agent coordination patterns
+- Advanced memory and state management
+- Support for complex agent workflows
+
+**Maintained by**: LangChain AI
+
+**Status**: Active development
 
 ### AgentScope
 
@@ -358,6 +460,38 @@ including agent workloads.
 - Integration with Kubernetes APIs
 - Best practices for AI agents on K8s
 
+### KubeEdge Sedna
+
+<a href="https://github.com/kubeedge/sedna">`Sedna`</a>
+
+Sedna is a KubeEdge subproject providing edge-cloud collaborative AI
+capabilities, including federated learning, incremental learning, and edge
+inference with agent-like coordination.
+
+**Key Features:**
+
+- Edge-cloud synergy for AI workloads
+- Federated learning across edge nodes
+- Incremental learning and model updates
+- Joint inference between edge and cloud
+- Lifelong learning capabilities
+
+**Status**: CNCF Incubating (KubeEdge project)
+
+**Use Cases:**
+
+- Edge AI agent deployment
+- Distributed learning across edge devices
+- Model inference at the edge with cloud coordination
+- IoT and edge computing scenarios
+
+**Architecture:**
+
+- GlobalManager: Cloud-side control plane
+- LocalController: Edge-side agent components
+- Workers: Execute AI tasks (training, inference, evaluation)
+- Dataset/Model management across edge-cloud
+
 ### CNCF Tech Radar 2025 - Agentic AI Platforms
 
 According to **CNCF Tech Radar 2025 (Q3)**, the Agentic AI landscape is
@@ -489,15 +623,20 @@ Major AI model providers are making agents central to their platforms:
 
 - [KAgent Documentation](https://github.com/kagent-dev/kagent)
 - [Volcano AgentCube](https://github.com/volcano-sh/agentcube)
+- [Volcano Kthena](https://github.com/volcano-sh/kthena)
 - [Kubernetes SIG Agent Sandbox](https://github.com/kubernetes-sigs/agent-sandbox)
 - [Agent Infra Sandbox](https://github.com/agent-infra/sandbox)
 - [Kube-Agentic-Networking](https://github.com/kubernetes-sigs/kube-agentic-networking)
+- [LangChain DeepAgents](https://github.com/langchain-ai/deepagents)
+- [ArgoCD Agent](https://github.com/argoproj-labs/argocd-agent)
+- [KubeEdge Sedna](https://github.com/kubeedge/sedna)
 
 ### Community Resources
 
 - [CNCF Agentic System Initiative](https://github.com/cncf/toc/issues/1746)
 - [WG AI Integration Charter](https://github.com/kubernetes/community/blob/master/wg-ai-integration/charter.md)
 - [CNCF Tech Radar 2025](https://radar.cncf.io/)
+- [Agent Evolution Theory - WeChat Article](https://mp.weixin.qq.com/s/NUx4n5j0ftxzZ0Sz29RjOQ)
 
 ### Related Documentation
 
