@@ -39,8 +39,9 @@ simple model inference to autonomous systems that can:
 
 ### Four-Stage Evolution of AI Agents
 
-According to **Professor Yang Qiang**, AI Agents (智能体) are expected to
-evolve through four distinct stages in 2026 and beyond:
+According to **Professor Yang Qiang** (Hong Kong University of Science and
+Technology), AI Agents (智能体) are expected to evolve through four distinct
+stages in 2026 and beyond:
 
 1. **Stage 1: Human-Defined Goals and Planning**
    - Both objectives and execution plans are defined by humans
@@ -77,6 +78,7 @@ focus should be on integration, deployment infrastructure, and organizational
 readiness.
 
 Reference: [Agent Evolution Theory - WeChat Article](https://mp.weixin.qq.com/s/NUx4n5j0ftxzZ0Sz29RjOQ)
+(accessed 2026)
 
 ### Agent Landscape Categories
 
@@ -281,11 +283,13 @@ enabling secure and scalable application delivery across multiple clusters.
 <a href="https://github.com/langchain-ai/deepagents">`deepagents`</a>
 
 DeepAgents is LangChain's framework for building sophisticated multi-agent
-systems with deep reasoning capabilities.
+systems with enhanced reasoning capabilities through deeper chain-of-thought
+processing and planning.
 
 **Key Features:**
 
-- Deep reasoning and planning for agents
+- Enhanced reasoning with deeper chain-of-thought processing
+- Advanced planning and task decomposition
 - Integration with LangChain ecosystem
 - Multi-agent coordination patterns
 - Advanced memory and state management
