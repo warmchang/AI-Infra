@@ -501,7 +501,9 @@ management and multi-tenancy support.
 Kubernetes-native LLM inference platform that provides comprehensive
 infrastructure for deploying and managing Large Language Models in production
 environments. As part of the Volcano ecosystem, Kthena brings enterprise-grade
-capabilities to LLM inference workloads.
+capabilities to LLM inference workloads. **Latest release: v0.3.0** establishes
+Kthena as a robust and scalable platform for AI inference with significant
+enhancements for P/D disaggregation.
 
 **Key Capabilities:**
 
@@ -514,17 +516,48 @@ capabilities to LLM inference workloads.
 - **Workload Orchestration**: Comprehensive lifecycle management for inference
   workloads including scaling and failure handling
 
+**v0.3.0 New Features for P/D Disaggregation:**
+
+- **LeaderWorkerSet Support**: Native integration with LeaderWorkerSet (LWS)
+  API enables sophisticated management of distributed inference workloads with
+  leader-worker topologies, simplifying P/D disaggregation deployments
+- **Network Topology-Aware Scheduling**: Fine-grained, role-level control over
+  gang scheduling and network topology awareness using Volcano's
+  `subGroupPolicy` feature. This minimizes inter-role communication latency
+  (critical for P/D separation) by co-locating prefill and decode instances on
+  network-proximal nodes (same switch/rack). Requires Volcano v1.14+
+- **Role-Level Gang Scheduling**: Ensures all pods belonging to a specific
+  role (e.g., prefill-0) are scheduled together as an atomic unit, preventing
+  partial deployments that could break distributed inference workloads
+- **ModelServing Revision Control**: Native version control system with
+  partition-based updates for canary deployments and rollback capabilities
+- **Router Observability**: Comprehensive observability framework with debug
+  port (default 15000), detailed metrics for monitoring latency/throughput,
+  and E2E test suite for production reliability
+
 **Integration with P/D Disaggregation:**
 
 Kthena provides infrastructure support for P/D disaggregation through:
 
 - Native Kubernetes workload management for disaggregated architectures
-- Coordinated scheduling of prefill and decode components
+- Coordinated scheduling of prefill and decode components with topology
+  awareness
 - Resource optimization across disaggregated inference phases
-- Integration with Volcano's batch scheduling for efficient workload placement
+- Integration with Volcano's batch scheduling and `subGroupPolicy` for
+  efficient, topology-aware workload placement
+- LeaderWorkerSet integration for managing complex leader-worker relationships
+  in distributed inference
 
-This makes Kthena well-suited for organizations building production LLM
-inference platforms with P/D disaggregation requirements.
+**Production Advantages:**
+
+With v0.3.0, Kthena is particularly well-suited for organizations building
+production LLM inference platforms with P/D disaggregation requirements:
+
+- Network topology awareness significantly reduces communication overhead
+  between prefill and decode instances
+- Role-level gang scheduling ensures atomic deployment of distributed workloads
+- Comprehensive observability enables production monitoring and debugging
+- Native revision control supports safe canary deployments and rollbacks
 
 ### llm-d
 

@@ -48,14 +48,23 @@ For detailed information, see [AIBrix Introduction](./aibrix.md).
 [`Kthena`](https://github.com/volcano-sh/kthena) is a Kubernetes-native LLM
 inference platform that transforms how organizations deploy and manage Large
 Language Models in production. Kthena is part of the Volcano ecosystem and
-provides comprehensive infrastructure for scalable LLM inference.
+provides comprehensive infrastructure for scalable LLM inference. **Latest
+release: v0.3.0** introduces LeaderWorkerSet support, network topology-aware
+scheduling, and enhanced observability.
 
 **Key highlights:**
 
-- Kubernetes-native architecture for seamless cluster integration
-- Production-ready LLM deployment and lifecycle management
-- Optimized resource scheduling for inference workloads
-- Enterprise-grade scalability and reliability
+- **LeaderWorkerSet Integration**: Native support for distributed inference
+  with leader-worker topologies
+- **Topology-Aware Scheduling**: Role-level gang scheduling and network
+  topology awareness for optimized P/D disaggregation (requires Volcano v1.14+)
+- **ModelServing Revision Control**: Native version control for ModelServing
+  with rollback capabilities
+- **Router Observability**: Comprehensive metrics, debug port, and E2E testing
+  for production reliability
+- **Enhanced Rolling Updates**: Configurable maxUnavailable for faster rollouts
+- **Plugin Framework**: Extensible architecture for custom configuration logic
+- **vLLM Data Parallel**: Support for vLLM data parallel deployment modes
 
 ### llm-d
 
