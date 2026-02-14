@@ -47,7 +47,7 @@ AGNTCon + MCPCon 由高度成功的 MCP Dev Summit 演进而来，将视野从�
 
 - **时间：** 2026 年 10 月 22-23 日
 - **地点：** 美国加州圣何塞
-- **注册链接：** https://events.linuxfoundation.org/agntcon-plus-mcpcon/
+- **注册链接：** <a href="https://events.linuxfoundation.org/agntcon-plus-mcpcon/">https://events.linuxfoundation.org/agntcon-plus-mcpcon/</a>
 
 ### 2. MCP Dev Summit North America 2026
 
@@ -73,7 +73,7 @@ Model Context Protocol (MCP) 是构建 AI Agent 的关键协议之一，MCP Dev 
 
 #### 参会信息
 
-- **注册链接：** https://events.linuxfoundation.org/mcp-dev-summit-north-america/
+- **注册链接：** <a href="https://events.linuxfoundation.org/mcp-dev-summit-north-america/">https://events.linuxfoundation.org/mcp-dev-summit-north-america/</a>
 - **早鸟优惠截止日期：** 尽早注册以锁定 $275 优惠价格
 
 ## 为什么关注 AAIF？
@@ -103,9 +103,9 @@ AAIF 的活动不仅关注理论和研究，更重视实际应用和生产环境
 
 如果您对 Agentic AI 和 AI Agent 感兴趣，可以通过以下方式参与 AAIF 社区：
 
-1. **访问 AAIF 官网：** https://aaif.io/
-2. **注册参加 AGNTCon + MCPCon：** https://events.linuxfoundation.org/agntcon-plus-mcpcon/
-3. **注册参加 MCP Dev Summit：** https://events.linuxfoundation.org/mcp-dev-summit-north-america/
+1. **访问 AAIF 官网：** <a href="https://aaif.io/">https://aaif.io/</a>
+2. **注册参加 AGNTCon + MCPCon：** <a href="https://events.linuxfoundation.org/agntcon-plus-mcpcon/">https://events.linuxfoundation.org/agntcon-plus-mcpcon/</a>
+3. **注册参加 MCP Dev Summit：** <a href="https://events.linuxfoundation.org/mcp-dev-summit-north-america/">https://events.linuxfoundation.org/mcp-dev-summit-north-america/</a>
 4. **关注社区动态：** 持续关注 AAIF 发布的最新消息和技术更新
 
 ## 总结
@@ -119,7 +119,7 @@ Agentic AI Foundation (AAIF) 作为一个中立、开放的基金会，正在为
 
 ## 参考资料
 
-- AAIF 官网：https://aaif.io/
-- AGNTCon + MCPCon 2026：https://events.linuxfoundation.org/agntcon-plus-mcpcon/
-- MCP Dev Summit North America 2026：https://events.linuxfoundation.org/mcp-dev-summit-north-america/
-- Linux Foundation Events：https://events.linuxfoundation.org/
+- AAIF 官网：<a href="https://aaif.io/">https://aaif.io/</a>
+- AGNTCon + MCPCon 2026：<a href="https://events.linuxfoundation.org/agntcon-plus-mcpcon/">https://events.linuxfoundation.org/agntcon-plus-mcpcon/</a>
+- MCP Dev Summit North America 2026：<a href="https://events.linuxfoundation.org/mcp-dev-summit-north-america/">https://events.linuxfoundation.org/mcp-dev-summit-north-america/</a>
+- Linux Foundation Events：<a href="https://events.linuxfoundation.org/">https://events.linuxfoundation.org/</a>
