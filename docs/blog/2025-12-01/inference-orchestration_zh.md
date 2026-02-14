@@ -68,6 +68,9 @@ leader-worker 模式保持协调。
 这个设计选择反映了一个关键洞察：**最佳编排解决方案取决于你现有的基础设施和调度
 需求**。
 
+> **更新 (v0.3.0)：** Kthena 自 v0.3.0 版本起已支持 LeaderWorkerSet 集成，
+> 可根据工作负载需求灵活选择基于 LWS 或 Serving Group 的架构。
+
 ### 3. StormService：AIBrix
 
 **[AIBrix StormService](https://github.com/vllm-project/aibrix)** 为 P/D 分离提供
@@ -125,7 +128,7 @@ LWS 的设计模式：
 
 | 模式 | llm-d | Kthena | AIBrix | Dynamo | RBG |
 | --- | --- | --- | --- | --- | --- |
-| 基于 LWS | ✓ (双) | ✗ | ✗ | ✓ (可选) | ✓ (启发) |
+| 基于 LWS | ✓ (双) | ✓ (v0.3.0+) | ✗ | ✓ (可选) | ✓ (启发) |
 | P/D 分离 | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 智能路由 | ✓ | ✓ | ✓ | ✓ | ✓ |
 | KV 缓存管理 | LMCache | 原生 | 分布式 | 原生 | 原生 |

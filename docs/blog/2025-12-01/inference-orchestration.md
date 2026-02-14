@@ -9,11 +9,11 @@ canonical_path: docs/blog/2025-12-01/inference-orchestration.md
 # Inference Orchestration: Current Solutions and Convergence Trends
 
 Note: The content in this article is based on currently available public information
-and is intended for technical reference only. 
+and is intended for technical reference only.
 The effectiveness of each solution depends heavily on your specific workload,
 infrastructure, and ecosystem integration. The architectural affiliations
-and early design choices mentioned here do not determine their future direction. 
-In practice, community activity, openness, and long-term evolution are 
+and early design choices mentioned here do not determine their future direction.
+In practice, community activity, openness, and long-term evolution are
 often more important factors.
 Please evaluate and choose based on your own scenario.
 
@@ -84,6 +84,10 @@ Pod layering added complexity without clear benefits for their use case.
 This design choice reflects a key insight: **the best orchestration solution
 depends on your existing infrastructure and scheduling requirements**.
 
+> **Update (v0.3.0):** Kthena now supports LeaderWorkerSet integration as of
+> the v0.3.0 release, providing flexible options for both LWS-based and
+> Serving Group architectures depending on workload requirements.
+
 ### 3. StormService: AIBrix
 
 **[AIBrix StormService](https://github.com/vllm-project/aibrix)** provides
@@ -113,7 +117,7 @@ deployment modes:
 
 **Grove Mode:**
 
-- High-performance inference 
+- High-performance inference
 - NVIDIA-native deployment
 - Optimized for pure NVIDIA infrastructure
 
@@ -144,7 +148,7 @@ Despite different implementations, several patterns are converging:
 
 | Pattern | llm-d | Kthena | AIBrix | Dynamo | RBG |
 | --- | --- | --- | --- | --- | --- |
-| LWS-based | ✓ (dual) | ✗ | ✗ | ✓ (option) | ✓ (inspired) |
+| LWS-based | ✓ (dual) | ✓ (v0.3.0+) | ✗ | ✓ (option) | ✓ (inspired) |
 | P/D disaggregation | ✓ | ✓ | ✓ | ✓ | ✓ |
 | Intelligent routing | ✓ | ✓ | ✓ | ✓ | ✓ |
 | KV cache management | LMCache | Native | Distributed | Native | Native |

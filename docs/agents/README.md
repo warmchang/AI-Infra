@@ -194,15 +194,18 @@ management.
 
 <a href="https://github.com/volcano-sh/kthena">`Kthena`</a>
 
-Kthena is another Volcano ecosystem project focusing on advanced agent
-scheduling and orchestration capabilities for AI workloads.
+Kthena is a Volcano ecosystem project for Kubernetes-native LLM inference
+orchestration and management. While primarily focused on inference workloads,
+Kthena provides advanced scheduling capabilities relevant to agentic systems
+that require LLM backends.
 
 **Key Features:**
 
-- Advanced agent workload scheduling
-- Integration with Volcano batch scheduling
-- Resource optimization for agent tasks
-- Multi-tenant agent execution support
+- LeaderWorkerSet integration for distributed inference topologies
+- Network topology-aware scheduling (Volcano v1.14+)
+- Role-level gang scheduling for distributed workloads
+- ModelServing lifecycle management with revision control
+- Router observability and debugging capabilities
 
 **Maintained by**: Volcano community (CNCF Graduated project)
 
