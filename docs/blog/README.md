@@ -1,7 +1,7 @@
 ---
 status: Active
 maintainer: pacoxu
-last_updated: 2026-01-15
+last_updated: 2026-02-14
 tags: blog, kubernetes, ai-infrastructure
 ---
 
@@ -9,6 +9,22 @@ tags: blog, kubernetes, ai-infrastructure
 
 This directory contains blog posts and articles about AI infrastructure,
 Kubernetes scheduling, and related topics.
+
+## 2026-02-14: 关注 AAIF 进展：Agentic AI Foundation 及其旗下活动预告
+
+- [AAIF Introduction (Chinese)](./2026-02-14/aaif-introduction_zh.md)
+
+A comprehensive introduction to the Agentic AI Foundation (AAIF) and its
+upcoming flagship events:
+
+- **AAIF Overview**: A neutral, open foundation ensuring AI Agent capabilities
+  evolve transparently and collaboratively
+- **AGNTCon + MCPCon 2026**: October 22-23 in San Jose, CA - The flagship
+  annual conference expanding beyond MCP to the entire open agentic AI ecosystem
+- **MCP Dev Summit North America 2026**: April 2-3 in New York City - Premier
+  gathering for developers advancing AI agents with Model Context Protocol
+- Why AAIF matters: Open standards, community collaboration, open source support
+- How to participate in the AAIF community
 
 ## 2026-01-15: 推理平台实践与 AI 成本优化
 
