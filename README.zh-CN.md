@@ -101,6 +101,7 @@ tags: ai-infrastructure, kubernetes, learning-path, landscape
 #### 博客
 
 - [博客概述](./docs/blog/README.md)
+- [贡献开源的 ROI：LF Research 2025 年调查报告解读](./docs/blog/2026-02-25/opensource-contribution-roi_zh.md)
 - [GPU 故障检测与自愈](./docs/blog/2025-12-17/gpu-fault-detection_zh.md)
 - [AI Infra 时代的多租户隔离性方案探讨](./docs/blog/2025-12-15/multi-tenancy-isolation_zh.md)
   | [English](./docs/blog/2025-12-15/multi-tenancy-isolation.md)

@@ -1,7 +1,7 @@
 ---
 status: Active
 maintainer: pacoxu
-last_updated: 2026-02-14
+last_updated: 2026-02-25
 tags: blog, kubernetes, ai-infrastructure
 ---
 
@@ -9,6 +9,25 @@ tags: blog, kubernetes, ai-infrastructure
 
 This directory contains blog posts and articles about AI infrastructure,
 Kubernetes scheduling, and related topics.
+
+## 2026-02-25: 贡献开源的 ROI：LF Research 2025 年调查报告解读
+
+- [贡献开源的 ROI (Chinese)](./2026-02-25/opensource-contribution-roi_zh.md)
+
+A Chinese blog post analyzing the Linux Foundation Research 2025 Open Source ROI
+Survey, covering the business case for upstream open source contribution:
+
+- **Hidden cost of private forks**: Organizations spending hundreds of thousands
+  maintaining forks pay ongoing merge costs, delayed security patches, and
+  duplicated engineering effort
+- **Three core benefits of upstream contribution**: Faster security response,
+  accelerated development velocity, stronger talent attraction and retention
+- **Quantified ROI**: Average cost-benefit ratio of 2-5x; contributing
+  organizations achieve an estimated **6x ROI** per the quantitative model
+- **AI infrastructure context**: How the findings apply to Kubernetes, vLLM,
+  DRA/NRI, and other fast-moving open source ecosystems
+- **Practical recommendations**: Upstream-first strategy, dedicated contribution
+  time, performance incentives for open source engagement
 
 ## 2026-02-14: 关注 AAIF 进展：Agentic AI Foundation 及其旗下活动预告
 
