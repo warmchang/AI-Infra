@@ -20,6 +20,7 @@ Language Models (LLMs) as their core reasoning engine.
 - [Native AI Agent Kits](#native-ai-agent-kits)
 - [Kubernetes-Native Agent Platforms](#kubernetes-native-agent-platforms)
 - [Agent Development Frameworks](#agent-development-frameworks)
+- [Agent Sandbox Infrastructure](#agent-sandbox-infrastructure)
 - [Agent Infrastructure Components](#agent-infrastructure-components)
 - [CNCF and Ecosystem Initiatives](#cncf-and-ecosystem-initiatives)
 - [Learning Topics](#learning-topics)
@@ -389,6 +390,92 @@ capabilities.
 - High-performance agent runtime
 - Structured agent patterns
 
+## Agent Sandbox Infrastructure
+
+Agent sandboxes provide secure, isolated execution environments for AI agents
+that run untrusted code — LLM-generated Python, shell commands, file
+operations, and browser automation. Designing a scalable sandbox requires
+choosing the right architecture pattern and underlying technology.
+
+### Two Architecture Patterns
+
+<a href="https://browser-use.com/posts/two-ways-to-sandbox-agents">Browser
+Use</a> describes two fundamental patterns for keeping agent code isolated
+from infrastructure secrets:
+
+**Pattern 1: Isolate the Tool** — The agent loop runs on your backend;
+only dangerous operations (code execution, terminal) run in a separate
+sandbox reached via HTTP. Simple to adopt but the agent still shares resources
+with the API backend.
+
+**Pattern 2: Isolate the Agent** — The entire agent runs in a sandbox
+with zero secrets. A stateless **control plane** holds all credentials and
+proxies every sensitive operation:
+
+- **LLM calls**: Control plane owns the full conversation history and proxies
+  to the LLM provider; sandbox only sends new messages
+- **File sync**: Sandbox requests presigned upload/download URLs; never
+  holds cloud credentials
+- **Billing and cost caps**: Enforced at the control plane boundary
+
+Pattern 2 makes the agent fully disposable and scales each layer
+independently. Key insight: *"Your agent should have nothing worth stealing
+and nothing worth preserving."*
+
+### Sandbox Technology Landscape
+
+| Technology | Cold Start | Isolation | Python | Image Build |
+| ---------- | --------- | --------- | ------ | ----------- |
+| Container (Docker) | ~50ms | Shared kernel | Full | Dockerfile |
+| Firecracker microVM | ~125ms (+snapshot <1s) | Separate kernel | Full | ext4 rootfs |
+| Kata Containers | ~125ms | Separate kernel | Full | OCI/Docker |
+| WASM (monty) | 0.06ms | WASI | Limited | Custom |
+| Unikernel (Unikraft) | <100ms | Minimal kernel | Improving | Custom |
+
+The core tradeoffs analyzed by 高策 (gaocegege) in
+<a href="https://gaocegege.com/Blog/genai/unikernel-agent">Agent sandbox
+可能的选型以及 unikernel 的机会</a> (2026):
+
+- **e2b** (<a href="https://github.com/e2b-dev/e2b">GitHub</a>): Uses
+  Firecracker microVMs. Templates are full VM snapshots that resume in under
+  1 second (Intel <8ms, AMD <3ms). Image building converts Dockerfiles to
+  ext4 rootfs. Uses a lightweight best-of-k scheduler rather than Kubernetes.
+- **k7** (<a href="https://github.com/Katakate/k7">GitHub</a>): Uses Kata
+  Containers with Firecracker VMM. Works directly with OCI/Docker images —
+  no ext4 conversion. Integrates with Kubernetes/k3s. Kata's abstraction
+  prevents direct use of Firecracker snapshots.
+- **monty** (<a href="https://github.com/pydantic/monty">GitHub</a>): A
+  WASM-based Python-subset interpreter achieving 0.06ms cold starts, but
+  supports only a limited subset of Python (no `class`, limited stdlib).
+- **Unikraft** (<a href="https://unikraft.org/">website</a>): Unikernel
+  framework that compiles application + minimal kernel into a single image.
+  Very small attack surface and fast startup. Added limited multi-process
+  support in v0.19 (May 2025). Browser Use uses Unikraft microVMs in
+  production for zero-secret agent isolation.
+
+### Image Distribution Optimization
+
+For large images, pulling is often the dominant latency source — not
+container/VM startup itself. Modal's approach of **FUSE-based lazy loading**
+serves files on-demand from a priority cache chain (memory → local SSD →
+zone cache → CDN → object storage), dramatically cutting startup time.
+Similar techniques: <a href="https://github.com/containerd/stargz-snapshotter">
+estargz</a>, <a href="https://github.com/dragonflydb/dragonfly">Dragonfly</a>.
+
+### References
+
+- <a href="https://browser-use.com/posts/two-ways-to-sandbox-agents">Browser
+  Use: Building Secure, Scalable Agent Sandbox Infrastructure</a>
+- <a href="https://gaocegege.com/Blog/genai/unikernel-agent">高策: Agent
+  sandbox 可能的选型以及 unikernel 的机会</a>
+- <a href="https://github.com/e2b-dev/e2b">e2b (Firecracker sandbox)</a>
+- <a href="https://github.com/Katakate/k7">k7 (Kata sandbox)</a>
+- <a href="https://unikraft.org/">Unikraft</a>
+- <a href="../kubernetes/isolation.md#6-agent-sandbox">Detailed implementation
+  guide: Agent Sandbox in Kubernetes Isolation doc</a>
+
+---
+
 ## Agent Infrastructure Components
 
 ### Model Context Protocol (MCP)
@@ -562,10 +649,13 @@ Major AI model providers are making agents central to their platforms:
    - Error handling and recovery
 
 3. **Agent Security**:
-   - Sandbox environments
+   - Sandbox environments (Pattern 1: isolate-tool vs Pattern 2: isolate-agent)
+   - Technology selection: Firecracker, Kata Containers, Unikernel, WASM
    - Resource limits and quotas
    - Tool access control
    - Audit logging
+   - See [Agent Sandbox Infrastructure](#agent-sandbox-infrastructure) and
+     [Isolation Guide](../kubernetes/isolation.md#6-agent-sandbox)
 
 ### Infrastructure Patterns
 
@@ -608,7 +698,7 @@ Major AI model providers are making agents central to their platforms:
 - [ ] Expand documentation for each major agent platform
 - [ ] Create practical guides for deploying agents on Kubernetes
 - [ ] Document MCP implementation patterns
-- [ ] Add agent security best practices
+- [x] Add agent security best practices and sandbox infrastructure guide
 
 ### Medium-term (2026 Q3-Q4)
 
@@ -644,11 +734,13 @@ Major AI model providers are making agents central to their platforms:
 - [WG AI Integration Charter](https://github.com/kubernetes/community/blob/master/wg-ai-integration/charter.md)
 - [CNCF Tech Radar 2025](https://radar.cncf.io/)
 - [Agent Evolution Theory - WeChat Article](https://mp.weixin.qq.com/s/NUx4n5j0ftxzZ0Sz29RjOQ)
+- [Browser Use: Building Secure, Scalable Agent Sandbox Infrastructure](https://browser-use.com/posts/two-ways-to-sandbox-agents)
+- [高策: Agent sandbox 可能的选型以及 unikernel 的机会](https://gaocegege.com/Blog/genai/unikernel-agent)
 
 ### Related Documentation
 
 - [AI Gateway & Agentic Workflow](../../README.md#-3-ai-gateway--agentic-workflow)
-- [Agent Sandbox and Isolation](../kubernetes/isolation.md#6-agent-sandbox-kubernetes-sig-project)
+- [Agent Sandbox and Isolation](../kubernetes/isolation.md#6-agent-sandbox)
 - [Memory and Context Management](../inference/memory-context-db.md)
 - [LLM Inference Platforms](../inference/README.md) - For model deployment
   platforms like Kaito, AIBrix, and OME that provide the inference backend
