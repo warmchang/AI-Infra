@@ -96,7 +96,7 @@ AI-Infra/
 
 **Canonical Files**:
 
-- `README.md` - Comparison of inference platforms (AIBrix, llmaz, OME, Kthena)
+- `README.md` - Inference platform landscape (AIBrix, OME, Kthena, KServe, llm-d, Dynamo)
 - `aibrix.md` - AIBrix platform features and architecture
 - `pd-disaggregation.md` - Prefill-Decode disaggregation implementations
 - `caching.md` - KV cache and prefix caching techniques

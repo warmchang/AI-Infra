@@ -1,7 +1,7 @@
 ---
 status: Active
 maintainer: pacoxu
-last_updated: 2025-12-01
+last_updated: 2026-03-02
 tags: ai-infrastructure, kubernetes, learning-path, landscape
 ---
 
@@ -233,7 +233,7 @@ model serving at scale.
   - [Serving WG](https://github.com/kubernetes/community/blob/master/wg-serving/README.md)
 
 **See [Inference Guide](./docs/inference/README.md)** for comprehensive coverage of
-engines (vLLM, SGLang, Triton, TGI), platforms (Dynamo, AIBrix, OME, llmaz,
+engines (vLLM, SGLang, Triton, TGI), platforms (Dynamo, AIBrix, OME,
 Kthena, KServe), serverless solutions (Knative, AWS SageMaker), and deep-dive
 topics: [Model Architectures](./docs/inference/model-architectures.md) |
 [AIBrix](./docs/inference/aibrix.md) |
