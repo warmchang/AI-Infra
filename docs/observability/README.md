@@ -366,6 +366,35 @@ For shared AI infrastructure:
 - Build cost attribution and chargeback dashboards
 - Optimize workloads based on observability data
 
+## LLM Capability Evaluation (LLM 能力评测)
+
+Complementing runtime observability, model evaluation measures the quality of
+LLM outputs across dimensions such as knowledge, reasoning, code generation,
+instruction following, factuality, safety, and multilingual capabilities.
+
+### Open-source Evaluation Frameworks
+
+| Tool | Description |
+| --- | --- |
+| [lm-eval-harness](https://github.com/EleutherAI/lm-evaluation-harness) | General-purpose evaluation framework with hundreds of task adapters |
+| [OpenCompass](https://github.com/open-compass/opencompass) | All-in-one evaluation system with rich task sets, suitable for internal platforms |
+| [HELM](https://github.com/stanford-crfm/helm) | Systematic evaluation framework from Stanford with comprehensive dimension design |
+| [AlpacaEval](https://github.com/tatsu-lab/alpaca_eval) | Automated pairwise evaluation for instruction following and dialogue quality |
+| [lighteval](https://github.com/huggingface/lighteval) | Lightweight evaluation framework from Hugging Face, easy to integrate in CI |
+| [EvalPlus](https://github.com/evalplus/evalplus) | Enhanced HumanEval code evaluation with stricter test cases |
+| [SWE-bench](https://github.com/princeton-nlp/SWE-bench) | Real software engineering task benchmark for evaluating code agents |
+| [FastChat / MT-Bench](https://github.com/lm-sys/FastChat) | Multi-turn dialogue evaluation scripts and benchmarks |
+| [Ragas](https://github.com/explodinggradients/ragas) / [DeepEval](https://github.com/confident-ai/deepeval) | RAG pipeline and application-chain quality evaluation |
+
+### Key Benchmark Datasets
+
+- **Knowledge & Language**: MMLU / MMLU-Pro, ARC, HellaSwag, TruthfulQA
+- **Reasoning & Math**: GSM8K, MATH, BBH (Big-Bench Hard), AIME
+- **Code**: HumanEval / MBPP, EvalPlus, SWE-bench, LiveCodeBench
+- **Instruction Following**: MT-Bench, AlpacaEval, IFEval
+- **Safety**: AdvBench, HarmBench, RealToxicityPrompts
+- **Multilingual**: XNLI, XQuAD / TyDiQA, MIRACL
+
 ## References and Further Reading
 
 - [CNCF Observability Landscape](https://landscape.cncf.io/?group=observability-and-analysis)

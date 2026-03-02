@@ -43,6 +43,8 @@ The core serving engines that execute LLM inference:
 | [lmdeploy](https://github.com/InternLM/lmdeploy) | Shanghai AI Lab | Turbomind kernel, continuous batching, quantization |
 | [llama.cpp](https://github.com/ggml-org/llama.cpp) | ggml-org | CPU/GPU inference, GGUF format, edge deployment |
 | [Ollama](https://github.com/ollama/ollama) | Ollama | Developer-friendly, local deployment, model library |
+| [ONNX Runtime](https://github.com/microsoft/onnxruntime) | Microsoft | Cross-platform, multi-framework, hardware acceleration |
+| [OpenVINO](https://github.com/openvinotoolkit/openvino) | Intel | Intel hardware optimized, model optimization toolkit |
 
 ### Inference Platforms (推理平台)
 
@@ -58,6 +60,8 @@ Kubernetes-native platforms for orchestrating LLM inference at scale:
 | [llm-d](https://github.com/llm-d/llm-d) | Red Hat / IBM | Dual LWS + KServe | P/D disaggregation reference implementation |
 | [vLLM production-stack](https://github.com/vllm-project/production-stack) | vLLM Project | Helm-based | Router, multi-instance, KV-aware routing |
 | [Kaito](https://github.com/kaito-project/kaito) | Microsoft (CNCF Sandbox) | Workspace CRD | GPU auto-provisioning, preset models, AKS integration |
+| [Ray Serve](https://github.com/ray-project/ray) | Anyscale / Ray | Ray-based | Online serving, autoscaling, model composition, multi-replica |
+| [BentoML](https://github.com/bentoml/BentoML) | BentoML | BentoService | Model packaging, multi-framework, cloud deployment |
 
 ### Orchestration & Routing (编排与路由)
 
@@ -71,6 +75,7 @@ Components that handle request routing, load balancing, and P/D disaggregation:
 | LMCache | [LMCache](https://github.com/LMCache/LMCache) | KV cache offloading and reuse |
 | Mooncake | [Moonshot AI](https://github.com/kvcache-ai/Mooncake) | KV cache-centric disaggregated inference |
 | RBG | [SGLang](https://github.com/sgl-project/rbg) | Resource-aware batch scheduler (LWS-inspired) |
+| SGLang Router | [SGLang](https://github.com/sgl-project/sglang) | Inference routing and load balancing for SGLang |
 
 ## Featured Projects
 
@@ -179,3 +184,43 @@ TODO:
 - Add KServe detailed introduction (basic P/D disaggregation info added to
   [pd-disaggregation.md](./pd-disaggregation.md))
 - Add comprehensive end-to-end benchmark comparison across platforms
+
+## Kernel Optimization (算子与内核优化)
+
+Low-level GPU kernel libraries that accelerate LLM inference operations:
+
+### Kernel DSL & Codegen
+
+- [`Triton (triton-lang)`](https://github.com/triton-lang/triton): Python-like
+  DSL for writing custom GPU kernels, widely used in vLLM and SGLang
+- [`tilelang`](https://github.com/tile-ai/tilelang): DSL targeting
+  high-performance tiled kernel generation for AI workloads
+
+### Transformer Kernels
+
+- [`FlashInfer`](https://github.com/flashinfer-ai/flashinfer): High-performance
+  inference-side kernels (attention, MoE, etc.), used by vLLM and SGLang
+- [`FlashAttention`](https://github.com/Dao-AILab/flash-attention): Classic
+  memory-efficient attention kernel
+- [`xFormers`](https://github.com/facebookresearch/xformers): Optimized
+  transformer building blocks and related kernels (Meta)
+
+### Math Primitives
+
+- [`CUTLASS`](https://github.com/NVIDIA/cutlass): NVIDIA's GEMM/operator
+  building blocks for CUDA
+- [`DeepGEMM`](https://github.com/deepseek-ai/DeepGEMM): High-performance GEMM
+  implementation from DeepSeek
+
+## Quantization (量化与低精度)
+
+Model quantization tools reduce memory footprint and improve inference speed:
+
+| Tool | Organization | Description |
+| --- | --- | --- |
+| [bitsandbytes](https://github.com/bitsandbytes-foundation/bitsandbytes) | bitsandbytes | 8-bit/4-bit training and inference quantization |
+| [GPTQ](https://github.com/IST-DASLab/gptq) / [AutoGPTQ](https://github.com/AutoGPTQ/AutoGPTQ) | IST-DASLab | Post-training quantization for GPT models |
+| [AWQ](https://github.com/mit-han-lab/llm-awq) | MIT Han Lab | Activation-aware weight quantization |
+| [AMD Quark](https://quark.docs.amd.com/) | AMD | Model optimization and quantization for AMD ecosystem |
+| [LLM Compressor](https://github.com/vllm-project/llm-compressor) | vLLM Project | LLM compression/quantization toolchain |
+| [NVIDIA ModelOpt](https://github.com/NVIDIA/TensorRT-Model-Optimizer) | NVIDIA | Model optimization and quantization for NVIDIA ecosystem |
