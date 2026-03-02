@@ -1,7 +1,7 @@
 ---
 status: Active
 maintainer: pacoxu
-last_updated: 2025-12-01
+last_updated: 2026-03-02
 tags: ai-infrastructure, kubernetes, learning-path, landscape
 ---
 
@@ -227,7 +227,7 @@ LLM 推理引擎、平台和优化技术，用于大规模高效模型服务。
   - [Serving WG](https://github.com/kubernetes/community/blob/master/wg-serving/README.md)
 
 **详细内容请参见 [推理指南](./docs/inference/README.md)**，
-包含引擎（vLLM, SGLang, Triton, TGI）、平台（Dynamo, AIBrix, OME, llmaz,
+包含引擎（vLLM, SGLang, Triton, TGI）、平台（Dynamo, AIBrix, OME,
 Kthena, KServe）、无服务器解决方案（Knative, AWS SageMaker）的全面介绍，以及深入主题：
 [模型架构](./docs/inference/model-architectures.md) |
 [AIBrix](./docs/inference/aibrix.md) |

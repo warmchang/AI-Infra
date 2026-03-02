@@ -32,7 +32,6 @@ status in common AI Infra projects, and the future roadmap for its adoption.
   - [NVIDIA Dynamo](#nvidia-dynamo)
   - [vLLM production stack](#vllm-production-stack)
   - [AIBrix](#aibrix)
-  - [InftyAI/llmaz](#inftyaillmaz)
   - [KServe](#kserve)
 - [Scaling P/D Workloads](#scaling-pd-workloads)
   - [Challenges with Traditional Autoscaling](#challenges-with-traditional-autoscaling)
@@ -652,11 +651,6 @@ Dynamo's disaggregation implementation enables:
   [Add Prefill/Decode Disaggregation Support in Inference Gateway](https://github.com/vllm-project/aibrix/issues/1223)
   and [#958](https://github.com/vllm-project/aibrix/issues/958).
 
-### InftyAI/llmaz
-
-- Not supported yet.
-- Milestone [v0.3.0](https://github.com/InftyAI/llmaz/issues/433) includes PD disaggregation.
-
 ### KServe
 
 [`KServe`](https://github.com/kserve/kserve) is a CNCF Incubating project that
@@ -950,7 +944,6 @@ across heterogeneous GPU clusters.
 - <https://github.com/vllm-project/production-stack>
 - <https://github.com/vllm-project/aibrix>
 - <https://github.com/kserve/kserve>
-- <https://github.com/InftyAI/llmaz>
 - <https://github.com/LMCache/lmcache>
 - DistServe (OSDI'24): <https://www.usenix.org/system/files/osdi24-zhong-yinmin.pdf>
 
