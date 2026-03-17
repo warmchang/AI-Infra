@@ -726,6 +726,7 @@ Major AI model providers are making agents central to their platforms:
    - Audit logging
    - See [Agent Sandbox Infrastructure](#agent-sandbox-infrastructure) and
      [Isolation Guide](../kubernetes/isolation.md#6-agent-sandbox)
+   - Runtime benchmark: [runc vs gVisor vs Kata vs VM](./runtime-benchmark.md)
 
 ### Infrastructure Patterns
 
@@ -814,6 +815,7 @@ Major AI model providers are making agents central to their platforms:
 
 - [AI Gateway & Agentic Workflow](../../README.md#-3-ai-gateway--agentic-workflow)
 - [Agent Sandbox and Isolation](../kubernetes/isolation.md#6-agent-sandbox)
+- [Runtime Benchmark: runc vs gVisor vs Kata vs VM](./runtime-benchmark.md)
 - [Memory and Context Management](../inference/memory-context-db.md)
 - [LLM Inference Platforms](../inference/README.md) - For model deployment
   platforms like Kaito, AIBrix, and OME that provide the inference backend
