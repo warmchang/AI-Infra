@@ -263,7 +263,7 @@ function renderProjectDot(project) {
 
   let content = '';
   if (project.logoDataUri) {
-    content = `<image x="${(project.x - 9).toFixed(2)}" y="${(project.y - 9).toFixed(2)}" width="18" height="18" href="${project.logoDataUri}" preserveAspectRatio="xMidYMid meet" clip-path="url(#clip-circle)" />`;
+    content = `<image x="${(project.x - 11).toFixed(2)}" y="${(project.y - 11).toFixed(2)}" width="22" height="22" href="${project.logoDataUri}" preserveAspectRatio="xMidYMid meet" clip-path="url(#clip-circle)" />`;
   } else {
     content = `<text x="${x}" y="${(project.y + 4.2).toFixed(2)}" text-anchor="middle" class="dot-fallback">${escapeXml(
       shortLogo(project.name)
@@ -272,7 +272,7 @@ function renderProjectDot(project) {
 
   return `
     <g class="project-dot">
-      <circle cx="${x}" cy="${y}" r="12.5" fill="#FFFFFF" stroke="${ringStroke}" stroke-width="2.1" />
+      <circle cx="${x}" cy="${y}" r="14.5" fill="#FFFFFF" stroke="${ringStroke}" stroke-width="2.2" />
       ${content}
     </g>`;
 }
@@ -283,15 +283,15 @@ function renderLegendItem(project, locale, y) {
   const sourceLabel = locale.sourceLabels[project.sourceId] || project.source.label;
 
   const logoMarkup = project.logoDataUri
-    ? `<image x="0" y="-12" width="14" height="14" href="${project.logoDataUri}" preserveAspectRatio="xMidYMid meet" clip-path="url(#clip-circle)" />`
-    : `<text x="7" y="-2" text-anchor="middle" class="legend-fallback">${escapeXml(shortLogo(project.name))}</text>`;
+    ? `<image x="-1" y="-14" width="18" height="18" href="${project.logoDataUri}" preserveAspectRatio="xMidYMid meet" clip-path="url(#clip-circle)" />`
+    : `<text x="8" y="-2" text-anchor="middle" class="legend-fallback">${escapeXml(shortLogo(project.name))}</text>`;
 
   return `
     <g transform="translate(${legend.x + 28}, ${y})">
-      <circle cx="7" cy="-5" r="8" fill="#FFFFFF" stroke="${project.source.stroke}" stroke-width="1.4" />
+      <circle cx="8" cy="-5" r="10" fill="#FFFFFF" stroke="${project.source.stroke}" stroke-width="1.5" />
       ${logoMarkup}
-      <text x="22" y="-1" class="legend-item">${escapeXml(name)}</text>
-      <text x="22" y="13" class="legend-item-meta">${escapeXml(`${sector} | ${sourceLabel}`)}</text>
+      <text x="26" y="-1" class="legend-item">${escapeXml(name)}</text>
+      <text x="26" y="13" class="legend-item-meta">${escapeXml(`${sector} | ${sourceLabel}`)}</text>
     </g>`;
 }
 
@@ -420,8 +420,8 @@ function renderLocale(localeKey, outPath) {
       .subtitle { font: 500 19px ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #4B5563; }
       .sector-label { font: 600 13px ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #334155; }
       .ring-label { font: 700 14px ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #475569; letter-spacing: 0.6px; }
-      .dot-fallback { font: 700 9.8px ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #111827; }
-      .legend-fallback { font: 700 8px ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #111827; }
+      .dot-fallback { font: 700 11.2px ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #111827; }
+      .legend-fallback { font: 700 9.2px ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #111827; }
       .legend-title { font: 700 24px ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #111827; }
       .legend-note { font: 500 13.5px ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #4B5563; }
       .legend-source { font: 600 13px ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #334155; }
