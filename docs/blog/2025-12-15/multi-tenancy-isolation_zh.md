@@ -494,12 +494,12 @@ spec:
 - 门户与运维压力点: Lens、Headlamp、Kubernetes Dashboard、KubeSphere Console、KWOK
 - Kubewharf 体系: kubeBrain、KubeAdmiral、KubeZoo、Godel Scheduler、Katalyst
 
-![多集群管理雷达图 (CNCF + 生态项目)](../../../diagrams/mcm-multicluster-radar.svg)
+![多集群管理雷达图 (CNCF + 生态项目)](../../../diagrams/mcm-multicluster-radar.zh-CN.svg)
 
 维护方式:
 
 - 数据源: `diagrams/mcm-multicluster-radar.data.json`
-- 生成命令: `node scripts/generate-mcm-radar-svg.js`
+- 生成命令（同时产出英文/中文图）: `node scripts/generate-mcm-radar-svg.js`
 
 ### 多租户范围
 
