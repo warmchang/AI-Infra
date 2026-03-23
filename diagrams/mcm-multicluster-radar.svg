@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1880" height="1260" viewBox="0 0 1880 1260" role="img" aria-labelledby="title desc">
+  <title id="title">Multi-Cluster Management Radar (2026-Q1)</title>
+  <desc id="desc">Multi-cluster management technology radar generated from JSON data for easy GitHub maintenance.</desc>
+  <defs>
+    <style>
+      .title { font: 700 42px ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 500 19px ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #4B5563; }
+      .sector-label { font: 600 13px ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #334155; }
+      .ring-label { font: 700 14px ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #475569; letter-spacing: 0.6px; }
+      .dot-id { font: 700 10.5px ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #111827; }
+      .legend-title { font: 700 24px ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #111827; }
+      .legend-note { font: 500 13.5px ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #4B5563; }
+      .legend-source { font: 600 13px ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #334155; }
+      .legend-ring-title { font: 700 16px ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; }
+      .legend-ring-desc { font: 500 12.5px ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #64748B; }
+      .legend-item { font: 500 12.5px ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #1F2937; }
+      .footer { font: 500 13px ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #64748B; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1880" height="1260" fill="#F3F5F8" />
+  <rect x="1080" y="128" width="730" height="1010" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.4" />
+
+  <text x="76" y="72" class="title">Multi-Cluster Management Radar</text>
+  <text x="76" y="102" class="subtitle">2026-Q1 | updated 2026-03-23</text>
+
+  <path d="M 560.00 140.00 A 500 500 0 0 1 993.01 390.00 L 634.48 597.00 A 86 86 0 0 0 560.00 554.00 Z" fill="#FAFCFF" />
+  <path d="M 993.01 390.00 A 500 500 0 0 1 993.01 890.00 L 634.48 683.00 A 86 86 0 0 0 634.48 597.00 Z" fill="#F7FAFC" />
+  <path d="M 993.01 890.00 A 500 500 0 0 1 560.00 1140.00 L 560.00 726.00 A 86 86 0 0 0 634.48 683.00 Z" fill="#FAFCFF" />
+  <path d="M 560.00 1140.00 A 500 500 0 0 1 126.99 890.00 L 485.52 683.00 A 86 86 0 0 0 560.00 726.00 Z" fill="#F7FAFC" />
+  <path d="M 126.99 890.00 A 500 500 0 0 1 126.99 390.00 L 485.52 597.00 A 86 86 0 0 0 485.52 683.00 Z" fill="#FAFCFF" />
+  <path d="M 126.99 390.00 A 500 500 0 0 1 560.00 140.00 L 560.00 554.00 A 86 86 0 0 0 485.52 597.00 Z" fill="#F7FAFC" />
+  <circle cx="560" cy="640" r="500.00" fill="#FDECEC" fill-opacity="0.36" stroke="#CC5F5F" stroke-width="1.4" />
+  <circle cx="560" cy="640" r="396.50" fill="#FFF5E8" fill-opacity="0.36" stroke="#D58A39" stroke-width="1.4" />
+  <circle cx="560" cy="640" r="293.00" fill="#EAF2FF" fill-opacity="0.36" stroke="#4E7FD1" stroke-width="1.4" />
+  <circle cx="560" cy="640" r="189.50" fill="#E8F6EC" fill-opacity="0.36" stroke="#53A66A" stroke-width="1.4" />
+  <circle cx="560" cy="640" r="189.50" fill="none" stroke="#8A94A6" stroke-width="0.8" stroke-dasharray="4 5" />
+  <circle cx="560" cy="640" r="293.00" fill="none" stroke="#8A94A6" stroke-width="0.8" stroke-dasharray="4 5" />
+  <circle cx="560" cy="640" r="396.50" fill="none" stroke="#8A94A6" stroke-width="0.8" stroke-dasharray="4 5" />
+  <circle cx="560" cy="640" r="500.00" fill="none" stroke="#8A94A6" stroke-width="0.8" stroke-dasharray="4 5" />
+  <line x1="560.00" y1="554.00" x2="560.00" y2="140.00" stroke="#99A3B2" stroke-width="1.1" />
+  <line x1="634.48" y1="597.00" x2="993.01" y2="390.00" stroke="#99A3B2" stroke-width="1.1" />
+  <line x1="634.48" y1="683.00" x2="993.01" y2="890.00" stroke="#99A3B2" stroke-width="1.1" />
+  <line x1="560.00" y1="726.00" x2="560.00" y2="1140.00" stroke="#99A3B2" stroke-width="1.1" />
+  <line x1="485.52" y1="683.00" x2="126.99" y2="890.00" stroke="#99A3B2" stroke-width="1.1" />
+  <line x1="485.52" y1="597.00" x2="126.99" y2="390.00" stroke="#99A3B2" stroke-width="1.1" />
+  <text x="827.00" y="181.54" text-anchor="start" class="sector-label">Control Plane &amp; Orchestration</text>
+  <text x="1094.00" y="644.00" text-anchor="start" class="sector-label">GitOps &amp; App Delivery</text>
+  <text x="827.00" y="1106.46" text-anchor="start" class="sector-label">Cluster Lifecycle &amp; IaC</text>
+  <text x="293.00" y="1106.46" text-anchor="end" class="sector-label">Tenancy &amp; API Virtualization</text>
+  <text x="26.00" y="644.00" text-anchor="end" class="sector-label">Portal &amp; Visibility</text>
+  <text x="293.00" y="181.54" text-anchor="end" class="sector-label">Scale Testing &amp; Scheduling</text>
+  <text x="514.68" y="510.34" text-anchor="end" class="ring-label">ADOPT</text>
+  <text x="489.64" y="409.92" text-anchor="end" class="ring-label">TRIAL</text>
+  <text x="464.60" y="309.49" text-anchor="end" class="ring-label">ASSESS</text>
+  <text x="439.56" y="209.06" text-anchor="end" class="ring-label">HOLD</text>
+
+  <circle cx="560" cy="640" r="84" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2" />
+  <text x="560" y="636" text-anchor="middle" class="ring-label">MCM</text>
+  <text x="560" y="654" text-anchor="middle" class="legend-note">2026Q1</text>
+
+  
+    <g class="project-dot">
+      <circle cx="620.60" cy="535.05" r="12.5" fill="#E8F1FF" stroke="#3B82F6" stroke-width="2.1" />
+      <text x="620.60" y="539.25" text-anchor="middle" class="dot-id">01</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="679.35" cy="618.96" r="12.5" fill="#E8F1FF" stroke="#3B82F6" stroke-width="2.1" />
+      <text x="679.35" y="623.16" text-anchor="middle" class="dot-id">02</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="701.77" cy="665.00" r="12.5" fill="#E8F1FF" stroke="#3B82F6" stroke-width="2.1" />
+      <text x="701.77" y="669.20" text-anchor="middle" class="dot-id">03</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="637.90" cy="732.84" r="12.5" fill="#E8F1FF" stroke="#3B82F6" stroke-width="2.1" />
+      <text x="637.90" y="737.04" text-anchor="middle" class="dot-id">04</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="609.24" cy="775.28" r="12.5" fill="#FFF4E8" stroke="#D97706" stroke-width="2.1" />
+      <text x="609.24" y="779.48" text-anchor="middle" class="dot-id">05</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="442.94" cy="671.37" r="12.5" fill="#FFF4E8" stroke="#D97706" stroke-width="2.1" />
+      <text x="442.94" y="675.57" text-anchor="middle" class="dot-id">06</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="416.04" cy="640.00" r="12.5" fill="#FFF4E8" stroke="#D97706" stroke-width="2.1" />
+      <text x="416.04" y="644.20" text-anchor="middle" class="dot-id">07</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="398.95" cy="596.85" r="12.5" fill="#FFF4E8" stroke="#D97706" stroke-width="2.1" />
+      <text x="398.95" y="601.05" text-anchor="middle" class="dot-id">08</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="606.72" cy="420.22" r="12.5" fill="#FFF4E8" stroke="#D97706" stroke-width="2.1" />
+      <text x="606.72" y="424.42" text-anchor="middle" class="dot-id">09</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="660.65" cy="413.93" r="12.5" fill="#E8F1FF" stroke="#3B82F6" stroke-width="2.1" />
+      <text x="660.65" y="418.13" text-anchor="middle" class="dot-id">10</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="718.84" cy="421.38" r="12.5" fill="#E8F1FF" stroke="#3B82F6" stroke-width="2.1" />
+      <text x="718.84" y="425.58" text-anchor="middle" class="dot-id">11</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="726.98" cy="489.65" r="12.5" fill="#E8F1FF" stroke="#3B82F6" stroke-width="2.1" />
+      <text x="726.98" y="493.85" text-anchor="middle" class="dot-id">12</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="784.69" cy="640.00" r="12.5" fill="#FFF4E8" stroke="#D97706" stroke-width="2.1" />
+      <text x="784.69" y="644.20" text-anchor="middle" class="dot-id">13</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="483.15" cy="851.14" r="12.5" fill="#FFF4E8" stroke="#D97706" stroke-width="2.1" />
+      <text x="483.15" y="855.34" text-anchor="middle" class="dot-id">14</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="400.94" cy="829.57" r="12.5" fill="#FFF4E8" stroke="#D97706" stroke-width="2.1" />
+      <text x="400.94" y="833.77" text-anchor="middle" class="dot-id">15</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="335.31" cy="640.00" r="12.5" fill="#E8F1FF" stroke="#3B82F6" stroke-width="2.1" />
+      <text x="335.31" y="644.20" text-anchor="middle" class="dot-id">16</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="415.57" cy="467.88" r="12.5" fill="#FFF4E8" stroke="#D97706" stroke-width="2.1" />
+      <text x="415.57" y="472.08" text-anchor="middle" class="dot-id">17</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="475.36" cy="407.46" r="12.5" fill="#E8F1FF" stroke="#3B82F6" stroke-width="2.1" />
+      <text x="475.36" y="411.66" text-anchor="middle" class="dot-id">18</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="672.25" cy="331.60" r="12.5" fill="#F3E8FF" stroke="#9333EA" stroke-width="2.1" />
+      <text x="672.25" y="335.80" text-anchor="middle" class="dot-id">19</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="785.59" cy="371.15" r="12.5" fill="#F3E8FF" stroke="#9333EA" stroke-width="2.1" />
+      <text x="785.59" y="375.35" text-anchor="middle" class="dot-id">20</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="888.19" cy="640.00" r="12.5" fill="#FFF4E8" stroke="#D97706" stroke-width="2.1" />
+      <text x="888.19" y="644.20" text-anchor="middle" class="dot-id">21</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="475.06" cy="957.01" r="12.5" fill="#FFF4E8" stroke="#D97706" stroke-width="2.1" />
+      <text x="475.06" y="961.21" text-anchor="middle" class="dot-id">22</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="384.52" cy="943.94" r="12.5" fill="#FFF4E8" stroke="#D97706" stroke-width="2.1" />
+      <text x="384.52" y="948.14" text-anchor="middle" class="dot-id">23</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="295.73" cy="904.27" r="12.5" fill="#F3E8FF" stroke="#9333EA" stroke-width="2.1" />
+      <text x="295.73" y="908.47" text-anchor="middle" class="dot-id">24</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="327.93" cy="407.93" r="12.5" fill="#F3E8FF" stroke="#9333EA" stroke-width="2.1" />
+      <text x="327.93" y="412.13" text-anchor="middle" class="dot-id">25</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="384.52" cy="336.06" r="12.5" fill="#F3E8FF" stroke="#9333EA" stroke-width="2.1" />
+      <text x="384.52" y="340.26" text-anchor="middle" class="dot-id">26</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="463.27" cy="279.00" r="12.5" fill="#E8F1FF" stroke="#3B82F6" stroke-width="2.1" />
+      <text x="463.27" y="283.20" text-anchor="middle" class="dot-id">27</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="775.85" cy="266.15" r="12.5" fill="#FFF4E8" stroke="#D97706" stroke-width="2.1" />
+      <text x="775.85" y="270.35" text-anchor="middle" class="dot-id">28</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="991.69" cy="640.00" r="12.5" fill="#FFF4E8" stroke="#D97706" stroke-width="2.1" />
+      <text x="991.69" y="644.20" text-anchor="middle" class="dot-id">29</text>
+    </g>
+  
+    <g class="project-dot">
+      <circle cx="344.15" cy="266.15" r="12.5" fill="#FFF4E8" stroke="#D97706" stroke-width="2.1" />
+      <text x="344.15" y="270.35" text-anchor="middle" class="dot-id">30</text>
+    </g>
+
+  <text x="1098" y="168" class="legend-title">Index</text>
+  <text x="1098" y="188" class="legend-note">Blend of CNCF MCM radar and non-CNCF ecosystem projects (issue #267).</text>
+  
+    <g transform="translate(1108, 208)">
+      <circle cx="0" cy="0" r="9" fill="#E8F1FF" stroke="#3B82F6" stroke-width="2" />
+      <text x="16" y="4.5" class="legend-source">CNCF</text>
+    </g>
+  
+    <g transform="translate(1328, 208)">
+      <circle cx="0" cy="0" r="9" fill="#FFF4E8" stroke="#D97706" stroke-width="2" />
+      <text x="16" y="4.5" class="legend-source">Ecosystem (Non-CNCF)</text>
+    </g>
+  
+    <g transform="translate(1548, 208)">
+      <circle cx="0" cy="0" r="9" fill="#F3E8FF" stroke="#9333EA" stroke-width="2" />
+      <text x="16" y="4.5" class="legend-source">Kubewharf Ecosystem</text>
+    </g>
+  <text x="1098" y="258" class="legend-ring-title" fill="#53A66A">ADOPT (8)</text>
+<text x="1098" y="278" class="legend-ring-desc">Production default choices for most teams</text>
+<text x="1108" y="298" class="legend-item">01 Cilium Cluster Mesh [CNCF] - Control Plane &amp; Orchestration</text>
+<text x="1108" y="318" class="legend-item">02 Argo CD [CNCF] - GitOps &amp; App Delivery</text>
+<text x="1108" y="338" class="legend-item">03 Flux CD [CNCF] - GitOps &amp; App Delivery</text>
+<text x="1108" y="358" class="legend-item">04 Cluster API [CNCF] - Cluster Lifecycle &amp; IaC</text>
+<text x="1108" y="378" class="legend-item">05 Terraform [Ecosystem (Non-CNCF)] - Cluster Lifecycle &amp; IaC</text>
+<text x="1108" y="398" class="legend-item">06 Kubernetes Dashboard [Ecosystem (Non-CNCF)] - Portal &amp; Visibility</text>
+<text x="1108" y="418" class="legend-item">07 KubeSphere Console [Ecosystem (Non-CNCF)] - Portal &amp; Visibility</text>
+<text x="1108" y="438" class="legend-item">08 Lens [Ecosystem (Non-CNCF)] - Portal &amp; Visibility</text>
+<text x="1098" y="466" class="legend-ring-title" fill="#4E7FD1">TRIAL (10)</text>
+<text x="1098" y="486" class="legend-ring-desc">Strong candidates to evaluate in production pilots</text>
+<text x="1108" y="506" class="legend-item">09 Clusternet [Ecosystem (Non-CNCF)] - Control Plane &amp; Orchestration</text>
+<text x="1108" y="526" class="legend-item">10 Karmada [CNCF] - Control Plane &amp; Orchestration</text>
+<text x="1108" y="546" class="legend-item">11 KubeStellar [CNCF] - Control Plane &amp; Orchestration</text>
+<text x="1108" y="566" class="legend-item">12 Open Cluster Management [CNCF] - Control Plane &amp; Orchestration</text>
+<text x="1108" y="586" class="legend-item">13 Fleet [Ecosystem (Non-CNCF)] - GitOps &amp; App Delivery</text>
+<text x="1108" y="606" class="legend-item">14 vCluster [Ecosystem (Non-CNCF)] - Tenancy &amp; API Virtualization</text>
+<text x="1108" y="626" class="legend-item">15 Virtual Kubelet [Ecosystem (Non-CNCF)] - Tenancy &amp; API</text>
+<text x="1108" y="642" class="legend-item">Virtualization</text>
+<text x="1108" y="662" class="legend-item">16 Headlamp [CNCF] - Portal &amp; Visibility</text>
+<text x="1108" y="682" class="legend-item">17 KWOK [Ecosystem (Non-CNCF)] - Scale Testing &amp; Scheduling</text>
+<text x="1108" y="702" class="legend-item">18 Volcano [CNCF] - Scale Testing &amp; Scheduling</text>
+<text x="1098" y="730" class="legend-ring-title" fill="#D58A39">ASSESS (9)</text>
+<text x="1098" y="750" class="legend-ring-desc">Promising options that need focused validation</text>
+<text x="1108" y="770" class="legend-item">19 KubeAdmiral [Kubewharf Ecosystem] - Control Plane &amp; Orchestration</text>
+<text x="1108" y="790" class="legend-item">20 kubeBrain [Kubewharf Ecosystem] - Control Plane &amp; Orchestration</text>
+<text x="1108" y="810" class="legend-item">21 PipeCD [Ecosystem (Non-CNCF)] - GitOps &amp; App Delivery</text>
+<text x="1108" y="830" class="legend-item">22 Kamaji [Ecosystem (Non-CNCF)] - Tenancy &amp; API Virtualization</text>
+<text x="1108" y="850" class="legend-item">23 KCP [Ecosystem (Non-CNCF)] - Tenancy &amp; API Virtualization</text>
+<text x="1108" y="870" class="legend-item">24 KubeZoo [Kubewharf Ecosystem] - Tenancy &amp; API Virtualization</text>
+<text x="1108" y="890" class="legend-item">25 Godel Scheduler [Kubewharf Ecosystem] - Scale Testing &amp; Scheduling</text>
+<text x="1108" y="910" class="legend-item">26 Katalyst [Kubewharf Ecosystem] - Scale Testing &amp; Scheduling</text>
+<text x="1108" y="930" class="legend-item">27 Koordinator [CNCF] - Scale Testing &amp; Scheduling</text>
+<text x="1098" y="958" class="legend-ring-title" fill="#CC5F5F">HOLD (3)</text>
+<text x="1098" y="978" class="legend-ring-desc">Legacy patterns to avoid for new designs</text>
+<text x="1108" y="998" class="legend-item">28 KubeFed v1 [Ecosystem (Non-CNCF)] - Control Plane &amp; Orchestration</text>
+<text x="1108" y="1018" class="legend-item">29 Custom kubeconfig fan-out scripts [Ecosystem (Non-CNCF)] - GitOps &amp;</text>
+<text x="1108" y="1034" class="legend-item">App Delivery</text>
+<text x="1108" y="1054" class="legend-item">30 Untested multi-cluster operators [Ecosystem (Non-CNCF)] - Scale</text>
+<text x="1108" y="1070" class="legend-item">Testing &amp; Scheduling</text>
+
+
+  <text x="76" y="1186" class="footer">Maintenance: edit diagrams/mcm-multicluster-radar.data.json and run node scripts/generate-mcm-radar-svg.js</text>
+  <text x="76" y="1208" class="footer">Scope: multi-cluster management for AI infra (control plane, delivery, lifecycle, tenancy, portal, and scale testing).</text>
+</svg>
