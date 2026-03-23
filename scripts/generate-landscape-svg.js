@@ -8,6 +8,7 @@ const dataPath = path.join(repoRoot, 'diagrams', 'ai-infra-landscape.data.json')
 const outPath = path.join(repoRoot, 'diagrams', 'ai-infra-landscape.svg');
 
 const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+const logoCache = new Map();
 
 const canvas = { width: 1800, height: 1150 };
 const chart = { x: 110, y: 130, width: 1420, height: 900 };
@@ -56,6 +57,93 @@ function logoText(name, manual) {
     .join('');
 }
 
+function sanitizeId(input) {
+  const slug = String(input)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+  return slug || 'item';
+}
+
+function detectLogoMime(buffer, logoPath) {
+  if (
+    buffer.length >= 8 &&
+    buffer[0] === 0x89 &&
+    buffer[1] === 0x50 &&
+    buffer[2] === 0x4e &&
+    buffer[3] === 0x47 &&
+    buffer[4] === 0x0d &&
+    buffer[5] === 0x0a &&
+    buffer[6] === 0x1a &&
+    buffer[7] === 0x0a
+  ) {
+    return 'image/png';
+  }
+
+  if (buffer.length >= 2 && buffer[0] === 0xff && buffer[1] === 0xd8) {
+    return 'image/jpeg';
+  }
+
+  if (
+    buffer.length >= 12 &&
+    buffer.toString('ascii', 0, 4) === 'RIFF' &&
+    buffer.toString('ascii', 8, 12) === 'WEBP'
+  ) {
+    return 'image/webp';
+  }
+
+  const sniff = buffer.subarray(0, 512).toString('utf8').trimStart();
+  if (sniff.startsWith('<svg') || sniff.startsWith('<?xml') || sniff.includes('<svg')) {
+    return 'image/svg+xml';
+  }
+
+  const ext = path.extname(logoPath).toLowerCase();
+  if (ext === '.svg') return 'image/svg+xml';
+  if (ext === '.jpg' || ext === '.jpeg') return 'image/jpeg';
+  if (ext === '.webp') return 'image/webp';
+  return 'image/png';
+}
+
+function logoHref(logoPath) {
+  if (!logoPath) return null;
+  if (logoCache.has(logoPath)) return logoCache.get(logoPath);
+
+  const absolutePath = path.join(repoRoot, logoPath);
+  if (!fs.existsSync(absolutePath)) {
+    console.warn(`Missing logo file: ${logoPath}`);
+    logoCache.set(logoPath, null);
+    return null;
+  }
+
+  const buffer = fs.readFileSync(absolutePath);
+  const mimeType = detectLogoMime(buffer, logoPath);
+  const href = `data:${mimeType};base64,${buffer.toString('base64')}`;
+  logoCache.set(logoPath, href);
+  return href;
+}
+
+function badgeIconMarkup({ cx, cy, radius, stroke, fallbackText, fallbackClass, logoImage, clipId }) {
+  const circleMarkup = `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="${radius}" fill="white" stroke="${stroke}" />`;
+  const href = logoHref(logoImage);
+
+  if (!href) {
+    return `${circleMarkup}
+      <text x="${cx.toFixed(1)}" y="${(cy + 4.2).toFixed(1)}" text-anchor="middle" class="${fallbackClass}">${escapeXml(fallbackText)}</text>`;
+  }
+
+  const innerRadius = radius - 1.2;
+  const imageSize = innerRadius * 2;
+  const imageX = cx - innerRadius;
+  const imageY = cy - innerRadius;
+  return `${circleMarkup}
+      <defs>
+        <clipPath id="${clipId}">
+          <circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="${innerRadius.toFixed(1)}" />
+        </clipPath>
+      </defs>
+      <image x="${imageX.toFixed(1)}" y="${imageY.toFixed(1)}" width="${imageSize.toFixed(1)}" height="${imageSize.toFixed(1)}" href="${href}" preserveAspectRatio="xMidYMid meet" clip-path="url(#${clipId})" />`;
+}
+
 function wrapWords(text, maxChars) {
   const words = text.split(/\s+/).filter(Boolean);
   const lines = [];
@@ -74,7 +162,7 @@ function wrapWords(text, maxChars) {
   return lines.length ? lines : [text];
 }
 
-function projectNode(project) {
+function projectNode(project, index) {
   const group = data.groups[project.group] || data.groups.kernel;
   const baseX = toX(project.x);
   const baseY = toY(project.y);
@@ -84,12 +172,24 @@ function projectNode(project) {
   const top = clamp(baseY - size.height / 2, chart.y + 8, chart.y + chart.height - size.height - 8);
   const dashed = project.stage === 'early' ? ' project-early' : '';
   const bubble = logoText(project.name, project.logo);
+  const iconCx = left + 18;
+  const iconCy = top + size.height / 2;
+  const clipId = `project-logo-${index}-${sanitizeId(project.name)}`;
+  const iconMarkup = badgeIconMarkup({
+    cx: iconCx,
+    cy: iconCy,
+    radius: 11.5,
+    stroke: group.stroke,
+    fallbackText: bubble,
+    fallbackClass: 'logo',
+    logoImage: project.logo_image,
+    clipId
+  });
 
   return `
     <g class="project${dashed}" data-name="${escapeXml(project.name)}">
       <rect x="${left.toFixed(1)}" y="${top.toFixed(1)}" width="${size.width}" height="${size.height}" rx="8" fill="${group.fill}" stroke="${group.stroke}" />
-      <circle cx="${(left + 18).toFixed(1)}" cy="${(top + size.height / 2).toFixed(1)}" r="11.5" fill="white" stroke="${group.stroke}" />
-      <text x="${(left + 18).toFixed(1)}" y="${(top + size.height / 2 + 4.2).toFixed(1)}" text-anchor="middle" class="logo">${escapeXml(bubble)}</text>
+      ${iconMarkup}
       <text x="${(left + 36).toFixed(1)}" y="${(top + size.height / 2 + 5).toFixed(1)}" class="project-label">${escapeXml(project.name)}</text>
     </g>`;
 }
@@ -111,16 +211,30 @@ function noteNode(note) {
     </g>`;
 }
 
-function ecosystemNode(item) {
+function ecosystemNode(item, index) {
   const group = data.groups[item.group] || data.groups.training;
   const x = toX(item.x);
   const y = 58;
   const width = Math.max(96, textWidth(item.name) + 34);
+  const bubble = logoText(item.name, item.logo);
+  const iconCx = 18;
+  const iconCy = 17;
+  const clipId = `ecosystem-logo-${index}-${sanitizeId(item.name)}`;
+  const iconMarkup = badgeIconMarkup({
+    cx: iconCx,
+    cy: iconCy,
+    radius: 8,
+    stroke: group.stroke,
+    fallbackText: bubble,
+    fallbackClass: 'ecosystem-logo',
+    logoImage: item.logo_image,
+    clipId
+  });
+
   return `
     <g class="ecosystem-item" transform="translate(${(x - width / 2).toFixed(1)}, ${y})">
       <rect x="0" y="0" width="${width}" height="34" rx="17" fill="${group.fill}" stroke="${group.stroke}" />
-      <circle cx="18" cy="17" r="8" fill="white" stroke="${group.stroke}" />
-      <text x="18" y="21" text-anchor="middle" class="ecosystem-logo">${escapeXml(logoText(item.name))}</text>
+      ${iconMarkup}
       <text x="32" y="22" class="ecosystem-label">${escapeXml(item.name)}</text>
     </g>`;
 }
@@ -181,9 +295,9 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
 
   <text x="${chart.x}" y="104" class="legend">Legend: dashed border = early stage / under exploration</text>
 
-  ${data.ecosystem.map((item) => ecosystemNode(item)).join('\n  ')}
+  ${data.ecosystem.map((item, index) => ecosystemNode(item, index)).join('\n  ')}
 
-  ${data.projects.map((project) => projectNode(project)).join('\n  ')}
+  ${data.projects.map((project, index) => projectNode(project, index)).join('\n  ')}
 
   ${data.right_notes.map((note) => noteNode(note)).join('\n  ')}
 
