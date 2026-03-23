@@ -511,7 +511,7 @@ This updated version extends beyond CNCF items and includes non-CNCF ecosystem p
 Maintenance:
 
 - Source data: `diagrams/mcm-multicluster-radar.data.json`
-- Regenerate SVG: `node scripts/generate-mcm-radar-svg.js`
+- Regenerate SVG (EN + ZH): `node scripts/generate-mcm-radar-svg.js`
 
 ### Multitenancy Spectrum
 

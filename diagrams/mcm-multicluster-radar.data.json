@@ -3,7 +3,7 @@
     "title": "Multi-Cluster Management Radar",
     "version": "2026-Q1",
     "last_updated": "2026-03-23",
-    "note": "Edit this file and run node scripts/generate-mcm-radar-svg.js to regenerate diagrams/mcm-multicluster-radar.svg"
+    "note": "Edit this file and run node scripts/generate-mcm-radar-svg.js to regenerate EN and ZH radar SVG files"
   },
   "rings": [
     {
@@ -95,181 +95,211 @@
       "name": "Argo CD",
       "ring": "adopt",
       "sector": "delivery",
-      "source": "cncf"
+      "source": "cncf",
+      "logo": "diagrams/logos/mcm/argocd.png"
     },
     {
       "name": "Flux CD",
       "ring": "adopt",
       "sector": "delivery",
-      "source": "cncf"
+      "source": "cncf",
+      "logo": "diagrams/logos/mcm/fluxcd.png"
     },
     {
       "name": "Cluster API",
       "ring": "adopt",
       "sector": "lifecycle",
-      "source": "cncf"
+      "source": "cncf",
+      "logo": "diagrams/logos/mcm/clusterapi.png"
     },
     {
       "name": "Terraform",
       "ring": "adopt",
       "sector": "lifecycle",
-      "source": "ecosystem"
+      "source": "ecosystem",
+      "logo": "diagrams/logos/mcm/terraform.png"
     },
     {
       "name": "Cilium Cluster Mesh",
       "ring": "adopt",
       "sector": "control",
-      "source": "cncf"
+      "source": "cncf",
+      "logo": "diagrams/logos/mcm/cilium.png"
     },
     {
       "name": "Lens",
       "ring": "adopt",
       "sector": "ui",
-      "source": "ecosystem"
+      "source": "ecosystem",
+      "logo": "diagrams/logos/mcm/lens.png"
     },
     {
       "name": "Kubernetes Dashboard",
       "ring": "adopt",
       "sector": "ui",
-      "source": "ecosystem"
+      "source": "ecosystem",
+      "logo": "diagrams/logos/mcm/k8s.png"
     },
     {
       "name": "KubeSphere Console",
       "ring": "adopt",
       "sector": "ui",
-      "source": "ecosystem"
+      "source": "ecosystem",
+      "logo": "diagrams/logos/mcm/kubesphere.png"
     },
     {
       "name": "Karmada",
       "ring": "trial",
       "sector": "control",
-      "source": "cncf"
+      "source": "cncf",
+      "logo": "diagrams/logos/mcm/karmada.png"
     },
     {
       "name": "Open Cluster Management",
       "ring": "trial",
       "sector": "control",
-      "source": "cncf"
+      "source": "cncf",
+      "logo": "diagrams/logos/mcm/ocm.png"
     },
     {
       "name": "KubeStellar",
       "ring": "trial",
       "sector": "control",
-      "source": "cncf"
+      "source": "cncf",
+      "logo": "diagrams/logos/mcm/kubestellar.png"
     },
     {
       "name": "Clusternet",
       "ring": "trial",
       "sector": "control",
-      "source": "ecosystem"
+      "source": "ecosystem",
+      "logo": "diagrams/logos/mcm/clusternet.png"
     },
     {
       "name": "Fleet",
       "ring": "trial",
       "sector": "delivery",
-      "source": "ecosystem"
+      "source": "ecosystem",
+      "logo": "diagrams/logos/mcm/fleet.png"
     },
     {
       "name": "Virtual Kubelet",
       "ring": "trial",
       "sector": "tenancy",
-      "source": "ecosystem"
+      "source": "ecosystem",
+      "logo": "diagrams/logos/mcm/virtualkubelet.png"
     },
     {
       "name": "vCluster",
       "ring": "trial",
       "sector": "tenancy",
-      "source": "ecosystem"
+      "source": "ecosystem",
+      "logo": "diagrams/logos/mcm/vcluster.png"
     },
     {
       "name": "Headlamp",
       "ring": "trial",
       "sector": "ui",
-      "source": "cncf"
+      "source": "cncf",
+      "logo": "diagrams/logos/mcm/headlamp.png"
     },
     {
       "name": "KWOK",
       "ring": "trial",
       "sector": "testing",
-      "source": "ecosystem"
+      "source": "ecosystem",
+      "logo": "diagrams/logos/mcm/kwok.png"
     },
     {
       "name": "Volcano",
       "ring": "trial",
       "sector": "testing",
-      "source": "cncf"
+      "source": "cncf",
+      "logo": "diagrams/logos/mcm/volcano.png"
     },
     {
       "name": "KubeAdmiral",
       "ring": "assess",
       "sector": "control",
-      "source": "kubewharf"
+      "source": "kubewharf",
+      "logo": "diagrams/logos/mcm/kubewharf.png"
     },
     {
       "name": "kubeBrain",
       "ring": "assess",
       "sector": "control",
-      "source": "kubewharf"
+      "source": "kubewharf",
+      "logo": "diagrams/logos/mcm/kubewharf.png"
     },
     {
       "name": "KubeZoo",
       "ring": "assess",
       "sector": "tenancy",
-      "source": "kubewharf"
+      "source": "kubewharf",
+      "logo": "diagrams/logos/mcm/kubewharf.png"
     },
     {
       "name": "KCP",
       "ring": "assess",
       "sector": "tenancy",
-      "source": "ecosystem"
+      "source": "ecosystem",
+      "logo": "diagrams/logos/mcm/kcp.png"
     },
     {
       "name": "Kamaji",
       "ring": "assess",
       "sector": "tenancy",
-      "source": "ecosystem"
+      "source": "ecosystem",
+      "logo": "diagrams/logos/mcm/kamaji.png"
     },
     {
       "name": "PipeCD",
       "ring": "assess",
       "sector": "delivery",
-      "source": "ecosystem"
+      "source": "ecosystem",
+      "logo": "diagrams/logos/mcm/pipecd.png"
     },
     {
       "name": "Godel Scheduler",
       "ring": "assess",
       "sector": "testing",
-      "source": "kubewharf"
+      "source": "kubewharf",
+      "logo": "diagrams/logos/mcm/kubewharf.png"
     },
     {
       "name": "Katalyst",
       "ring": "assess",
       "sector": "testing",
-      "source": "kubewharf"
+      "source": "kubewharf",
+      "logo": "diagrams/logos/mcm/kubewharf.png"
     },
     {
       "name": "Koordinator",
       "ring": "assess",
       "sector": "testing",
-      "source": "cncf"
+      "source": "cncf",
+      "logo": "diagrams/logos/mcm/koordinator.png"
     },
     {
       "name": "KubeFed v1",
       "ring": "hold",
       "sector": "control",
-      "source": "ecosystem"
+      "source": "ecosystem",
+      "logo": "diagrams/logos/mcm/kubefed.png"
     },
     {
       "name": "Custom kubeconfig fan-out scripts",
       "ring": "hold",
       "sector": "delivery",
-      "source": "ecosystem"
+      "source": "ecosystem",
+      "logo": "diagrams/logos/mcm/k8s.png"
     },
     {
       "name": "Untested multi-cluster operators",
       "ring": "hold",
       "sector": "testing",
-      "source": "ecosystem"
+      "source": "ecosystem",
+      "logo": "diagrams/logos/mcm/k8s.png"
     }
   ]
 }
