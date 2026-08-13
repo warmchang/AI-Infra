@@ -1,7 +1,7 @@
 ---
 status: Active
 maintainer: pacoxu
-last_updated: 2026-07-31
+last_updated: 2026-08-13
 tags: kubernetes, scheduling, optimization, large-scale
 canonical_path: docs/kubernetes/scheduling-optimization.md
 ---
@@ -409,7 +409,10 @@ topology or queue policy should govern it?"
   admission control and queueing, commonly paired with a scheduler that
   performs placement.
 - <a href="https://github.com/kubernetes-sigs/lws">`LeaderWorkerSet (LWS)`</a>:
-  Kubernetes SIG workload abstraction for leader-worker applications.
+  Kubernetes SIG workload abstraction for leader-worker applications. See the
+  [LWS high-priority KEP learning path](./lws-keps-learning-path.md) for
+  subgroup, startup ordering, per-replica gang, resizing, and multi-role
+  orchestration semantics.
 
 **How to interpret the major routes:**
 
@@ -961,6 +964,7 @@ SLA-based scheduling complements other optimization strategies:
   Preemption](https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption/)
 - [Dynamic Resource Allocation
   (DRA)](./dra.md)
+- [LWS High-Priority KEP Learning Path](./lws-keps-learning-path.md)
 
 ## RoadMap (Ongoing Proposals)
 

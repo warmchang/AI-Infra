@@ -1,7 +1,7 @@
 ---
 status: Active
 maintainer: pacoxu
-last_updated: 2026-07-31
+last_updated: 2026-08-13
 tags: kubernetes, ai-infrastructure, scheduling, resource-management, topology-aware-scheduling
 canonical_path: docs/kubernetes/README.md
 ---
@@ -36,6 +36,9 @@ workload isolation.
   guide covering high-throughput scheduling, multi-scheduler patterns,
   native workload-aware scheduling, gang scheduling, topology-aware
   scheduling, load balancing, and descheduling strategies
+- **[LWS High-Priority KEP Learning Path](./lws-keps-learning-path.md)**:
+  Structured reading path for subgroup topology, startup ordering, per-replica
+  gang scheduling, worker resizing, and DisaggregatedSet orchestration
 - **[TAS Validation Report](./tas-validation.md)**: Topology-aware scheduling
   validation plan, A/B experiment checklist, strategy matrix, and next-stage
   decision gates for AI workloads
@@ -87,13 +90,15 @@ workload isolation.
 
 1. Start with [Scheduling Optimization](./scheduling-optimization.md) for
    production patterns
-2. Review [TAS Validation](./tas-validation.md) when evaluating topology-aware
+2. Use the [LWS KEP Learning Path](./lws-keps-learning-path.md) for
+   leader-worker, subgroup, gang, and multi-role workload semantics
+3. Review [TAS Validation](./tas-validation.md) when evaluating topology-aware
    scheduling for training, inference, or `GPU + NIC` workloads
-3. Review [DRA](./dra.md), [NVIDIA GPU Operator](./nvidia-gpu-operator.md),
+4. Review [DRA](./dra.md), [NVIDIA GPU Operator](./nvidia-gpu-operator.md),
    and [HAMi / GPU Sharing](./hami-gpu-sharing.md) for GPU resource management
-4. Explore [NRI](./nri.md) for fine-grained container control
-5. Understand [Pod Lifecycle](./pod-lifecycle.md) for debugging
-6. Use [Swap Memory Management](./swap-memory-management.md) when tuning
+5. Explore [NRI](./nri.md) for fine-grained container control
+6. Understand [Pod Lifecycle](./pod-lifecycle.md) for debugging
+7. Use [Swap Memory Management](./swap-memory-management.md) when tuning
    kubelet behavior under memory pressure
 
 ### For Platform Engineers
