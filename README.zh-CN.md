@@ -1,7 +1,7 @@
 ---
 status: Active
 maintainer: pacoxu
-last_updated: 2026-07-09
+last_updated: 2026-08-21
 tags: ai-infrastructure, kubernetes, learning-path, landscape
 ---
 
@@ -32,6 +32,7 @@ tags: ai-infrastructure, kubernetes, learning-path, landscape
 ## 📑 目录
 
 - [AI-Infra 全景图](#-ai-infra-全景图-2026年3月)
+- [AI Infra 定义](#-ai-infra-定义)
 - [AI 基础设施工程师学习路径](#-ai-基础设施工程师学习路径)
   - [0. 内核与运行时](#-0-内核与运行时底层内核)
   - [1. 调度与工作负载](#-1-调度与工作负载调度与工作负载)
@@ -45,6 +46,22 @@ tags: ai-infrastructure, kubernetes, learning-path, landscape
 - [参考资料](#-参考资料)
 - [会议](#会议)
 - [许可证](#-许可证)
+
+## 🧩 AI Infra 定义
+
+本仓库采用以下 AI Infra 长期边界定义：
+
+1. **训练**：分布式训练系统设计与执行
+   （`DP`/`TP`/`EP`/`SP`/`PP`），以及调度、运行时与可靠性。
+2. **推理（P/D）**：面向 prefill/decode 的服务栈，包括 `KVCache`、
+   PD 分离、模型路由与效率优化。
+3. **RL（训推一致性）**：策略闭环、在线/离线效率与 agentic
+   workflow 在训练与推理之间的协同。
+
+参考图：
+
+<img width="900" alt="AI infra software stack definition"
+src="https://github.com/user-attachments/assets/dcdb9f6a-c554-4878-b4b6-1be294981220" />
 
 ### 📂 文档文件
 
@@ -418,8 +435,14 @@ LLM 评估平台（TruLens, Deepchecks）的全面介绍。
 
 - [CNCF 全景图](https://landscape.cncf.io/)
 - [Awesome LLMOps](https://awesome-llmops.inftyai.com/)
+- [Open Infra Index](https://github.com/deepseek-ai/open-infra-index)
+- [InfraTech](https://github.com/CalvinXKY/InfraTech)
 - [AI Infra Learning](https://github.com/cr7258/ai-infra-learning)
 - [AI Infra Learning Docs](https://github.com/ai-infra-learning/docs)
+- [Awesome AI Infrastructures](https://github.com/1duo/awesome-ai-infrastructures)
+- [AI Infra Landscape](https://github.com/tensorchord/ai-infra-landscape)
+- [Awesome LLMOps (GitHub)](https://github.com/InftyAI/Awesome-LLMOps)
+- [AI Fundermentals](https://github.com/ForceInjection/AI-fundermentals)
 - [CNCF TAG Workloads Foundation](https://github.com/cncf/toc/blob/main/tags/tag-workloads-foundation/README.md)
 - [CNCF TAG Infrastructure](https://github.com/cncf/toc/blob/main/tags/tag-infrastructure/README.md)
 - [CNCF AI Initiative](https://github.com/cncf/toc/issues?q=is%3Aissue%20state%3Aopen%20label%3Akind%2Finitiative)
