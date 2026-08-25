@@ -1,7 +1,7 @@
 ---
 status: Active
 maintainer: pacoxu
-last_updated: 2026-08-13
+last_updated: 2026-08-25
 tags: kubernetes, ai-infrastructure, scheduling, resource-management, topology-aware-scheduling
 canonical_path: docs/kubernetes/README.md
 ---
@@ -65,6 +65,9 @@ workload isolation.
   remediation strategies
 - **[Node Resource Interface (NRI)](./nri.md)**: Fine-grained container
   resource management at the runtime level
+- **[Kubernetes v1.37 DRA and WAS Release Notes](./sig-release/v1.37/release.md)**:
+  AI-infrastructure-focused review of DRA migration and device management,
+  Workload-Aware Scheduling Beta, feature gates, and upgrade risks
 - **[Kubernetes v1.36 AI Infra Highlights](./v1.36-ai-infra-highlights.md)**:
   Curated v1.36 release signals focused on AI infrastructure relevance,
   upgrade risks, and recommended actions
@@ -100,6 +103,8 @@ workload isolation.
 6. Understand [Pod Lifecycle](./pod-lifecycle.md) for debugging
 7. Use [Swap Memory Management](./swap-memory-management.md) when tuning
    kubelet behavior under memory pressure
+8. Review [Kubernetes v1.37 DRA and WAS Release Notes](./sig-release/v1.37/release.md)
+   before testing native PodGroup scheduling or DRA-backed extended resources
 
 ### For Platform Engineers
 
