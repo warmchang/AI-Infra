@@ -1,7 +1,7 @@
 ---
 status: Active
 maintainer: pacoxu
-last_updated: 2026-08-21
+last_updated: 2026-08-25
 tags: ai-infrastructure, kubernetes, learning-path, landscape
 ---
 
@@ -291,6 +291,9 @@ can perceive, reason, and act.
       collaborative AI with federated learning
     - [`Kubernetes SIG Agent Sandbox`](https://github.com/kubernetes-sigs/agent-sandbox):
       Secure sandbox for AI agents
+    - [`K8E`](https://github.com/xiaods/k8e): Self-hosted, single-binary
+      Kubernetes sandbox distribution with warm pools and pluggable gVisor,
+      Kata Containers, or Firecracker isolation
     - [`Agent Substrate`](https://github.com/agent-substrate/substrate):
       Core system and high-density Kubernetes runtime for stateful agent actors with
       suspend/resume and real-time routing

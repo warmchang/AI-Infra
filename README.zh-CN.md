@@ -1,7 +1,7 @@
 ---
 status: Active
 maintainer: pacoxu
-last_updated: 2026-08-21
+last_updated: 2026-08-25
 tags: ai-infrastructure, kubernetes, learning-path, landscape
 ---
 
@@ -281,6 +281,9 @@ AI 网关为 LLM API 提供路由、负载均衡和管理，
     - [`KubeEdge Sedna`](https://github.com/kubeedge/sedna): 边云协同 AI 与联邦学习
     - [`Kubernetes SIG Agent Sandbox`](https://github.com/kubernetes-sigs/agent-sandbox):
       AI 智能体的安全沙箱
+    - [`K8E`](https://github.com/xiaods/k8e): 自托管、单二进制的
+      Kubernetes 沙箱发行版，提供 Warm Pool，并可接入 gVisor、
+      Kata Containers 或 Firecracker 隔离
     - [`Agent Substrate`](https://github.com/agent-substrate/substrate):
       面向有状态智能体会话的核心系统和高密度 Kubernetes 运行时，支持
       suspend/resume 与实时流量路由
