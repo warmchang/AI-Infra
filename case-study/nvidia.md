@@ -43,6 +43,7 @@ flowchart LR
 
   subgraph STATE["KV 状态面 / 数据搬运"]
     KVBM["⭐ KVBM<br/>KV Block Manager"]
+    KVCR["KVCR<br/>KV Cache Runner"]
     NIXL["NIXL"]
     NCCL["NCCL"]
   end
@@ -78,11 +79,13 @@ flowchart LR
 
   %% serving / state plane
   DYN --> KVBM
+  DYN -. "KV Router inventory / hints" .-> KVCR
   DYN --> TRT
   DYN --> TRITON
   LLMD -. "社区侧 distributed serving\nPD / KV-aware routing" .-> DYN
   LLMD -. "双 LWS / 社区路径" .-> LWS
   KVBM -. "KV block 生命周期 /\n分层 offload" .-> NIXL
+  KVCR -. "跨层 / 跨节点传输" .-> NIXL
   DYN -. "KV / prefix 传输" .-> NIXL
   TRT -. "可作为 Triton backend\n也可直接使用" .-> TRITON
 
@@ -98,7 +101,7 @@ flowchart LR
   classDef bridge fill:#f5f3ff,stroke:#7c3aed,color:#4c1d95,stroke-width:1.1px;
 
   class KAI,DRA,DYN,GROVE,KVBM star;
-  class GPO,CTK,NVRC,KDP,DCGM,AICR,NVS,TRT,TRITON,NIXL,NCCL normal;
+  class GPO,CTK,NVRC,KDP,DCGM,AICR,NVS,TRT,TRITON,KVCR,NIXL,NCCL normal;
   class LLMD,LWS bridge;
   class K8S,CTD base;
 ```
@@ -108,6 +111,7 @@ flowchart LR
 - [⭐ ai-dynamo/dynamo](https://github.com/ai-dynamo/dynamo)
 - [⭐ ai-dynamo/grove](https://github.com/ai-dynamo/grove)
 - [ai-dynamo/nixl](https://github.com/ai-dynamo/nixl)
+- [ai-dynamo/kvcr](https://github.com/ai-dynamo/kvcr) — KV Cache Runner（活跃开发中）
 - [⭐ kai-scheduler/KAI-Scheduler](https://github.com/kai-scheduler/KAI-Scheduler)
 - [⭐ kubernetes-sigs/dra-driver-nvidia-gpu](https://github.com/kubernetes-sigs/dra-driver-nvidia-gpu)
 - [NVIDIA/gpu-operator](https://github.com/NVIDIA/gpu-operator)
@@ -127,16 +131,17 @@ flowchart LR
 - [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes)
 - [containerd/containerd](https://github.com/containerd/containerd)
 
-## 补充主线：Dynamo / Grove / KAI / KVBM
+## 补充主线：Dynamo / Grove / KAI / KVBM / KVCR
 
 这条线现在更适合理解成：
 
 ```text
 Dynamo -> Grove -> KAI Scheduler -> GPU DRA Driver
           \-> KVBM -> NIXL
+          \-> KV Router -> KVCR -> NIXL
 ```
 
-它们不是四个并列竞争项目，而是从推理系统意图一路落到工作负载抽象、调度策略、
+它们不是一组并列竞争项目，而是从推理系统意图一路落到工作负载抽象、调度策略、
 资源模型和 KV 状态面的主链路。
 
 | 组件 | 在图中的位置 | 主要职责 |
@@ -145,10 +150,16 @@ Dynamo -> Grove -> KAI Scheduler -> GPU DRA Driver
 | `Grove` | 多角色工作负载抽象 | 用 `PodCliqueSet / PodGang` 一类 API 把 `prefill / decode / router / worker` 表达成单个 Kubernetes 对象 |
 | `KAI Scheduler` | 调度策略层 | 负责 gang、拓扑感知、层次队列、公平性和 DRA support，把 Grove 的编排意图落成真正的放置决策 |
 | `KVBM` | KV 状态面 | 管理 KV block 生命周期、跨节点复用与 `HBM -> host -> SSD -> remote` 分层 offload，和 `NIXL` 一起构成 Dynamo 的 KV state plane |
+| `KVCR` | KV cache runtime | 根据 KV Router hints 管理本地 DRAM、SSD 和对象存储驻留，通过 NIXL 完成跨层与跨节点传输，并以 KVCR-Guard 提供可选故障恢复能力 |
 
 这里最容易被漏掉的是 `KVBM`：它不是独立 repo，而是 `Dynamo` 内部非常关键的系统层。
 如果不把它画出来，`Dynamo` 看起来就会像“又一个推理部署器”，而不是一个把 KV 生命周期、
 路由和多节点 serving 一起组织起来的平台。
+
+`KVCR` 则是独立仓库中的新方向：把全局 cache inventory 和路由决策留给 KV-aware router，
+自身聚焦本地 cache policy、驻留与数据搬运。它同时强调 framework/router agnostic，当前仍处于
+活跃开发阶段，官方尚不建议用于生产环境；因此这里先把它与 `KVBM` 并列展示，不直接定义为
+替代关系。
 
 ## 与 llm-d 的交叉补充
 
@@ -164,19 +175,20 @@ Dynamo -> Grove -> KAI Scheduler -> GPU DRA Driver
 | 控制面 / serving stack | `Dynamo` | `llm-d` |
 | 多角色 workload API | `Grove` | `LWS`（双 `LeaderWorkerSet` 路径） |
 | 调度与拓扑 | `KAI + GPU DRA Driver`，更强调 GPU / ComputeDomain / fabric 拓扑 | 更偏社区调度生态组合，常与 `KServe`、Gateway API、Kubernetes 原生 workload API 协同 |
-| KV 路径 | `KVBM + NIXL`，把 KV 复用、offload、远端传输做成系统级 state plane | 更强调 KV-aware routing、PD serving 和 serving stack 集成 |
+| KV 路径 | `KVBM / KVCR + NIXL`，把 KV 复用、offload、远端传输做成系统级 state plane | 更强调 KV-aware routing、PD serving 和 serving stack 集成 |
 | 硬件姿态 | 更偏 NVIDIA 一体化优化 | 更偏中立，更容易成为跨厂商 distributed serving 基线 |
 
 所以把 `llm-d` 交叉补进 NVIDIA 全景图的价值，不是说它和 `Dynamo` 是同一项目，而是能把
 两条路线的分层关系看得更清楚：
 
-- NVIDIA 主线的辨识度在 `Grove + KAI Scheduler + GPU DRA Driver + KVBM`
+- NVIDIA 主线的辨识度在 `Grove + KAI Scheduler + GPU DRA Driver + KVBM / KVCR`
 - 社区主线的辨识度在 `llm-d + LWS + KServe / Gateway API` 这类更上游、更中立的组合
 
 ## 生态交叉项目入口
 
 - [llm-d/llm-d](https://github.com/llm-d/llm-d)
-- [Dynamo KVBM design doc](https://github.com/ai-dynamo/dynamo/blob/main/docs/design-docs/kvbm-design.md)
+- [Dynamo KVBM README](https://github.com/ai-dynamo/dynamo/blob/main/lib/bindings/kvbm/README.md)
+- [KVCR design overview](https://github.com/ai-dynamo/kvcr/blob/main/docs/design_overview.md)
 
 ## 延伸阅读
 
