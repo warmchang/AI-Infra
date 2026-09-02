@@ -17,6 +17,7 @@ flowchart LR
   subgraph OPS["GPU 接入与集群运维"]
     GPO["GPU Operator"]
     CTK["NVIDIA Container Toolkit"]
+    NVRC["NVRC<br/>microVM PID 1"]
     KDP["k8s-device-plugin"]
     DCGM["dcgm-exporter"]
     AICR["AI Cluster Runtime (AICR)"]
@@ -55,11 +56,13 @@ flowchart LR
   K8S --> LWS
   K8S --> DYN
   CTD --> CTK
+  CTD -. "Kata Containers<br/>microVM 路径" .-> NVRC
 
   %% ops layer
   GPO --> CTK
   GPO --> KDP
   GPO --> DCGM
+  NVRC -. "启动 GPU 管理守护进程" .-> DCGM
   AICR --> GPO
   GPO -. "集成入口" .-> DRA
 
@@ -95,7 +98,7 @@ flowchart LR
   classDef bridge fill:#f5f3ff,stroke:#7c3aed,color:#4c1d95,stroke-width:1.1px;
 
   class KAI,DRA,DYN,GROVE,KVBM star;
-  class GPO,CTK,KDP,DCGM,AICR,NVS,TRT,TRITON,NIXL,NCCL normal;
+  class GPO,CTK,NVRC,KDP,DCGM,AICR,NVS,TRT,TRITON,NIXL,NCCL normal;
   class LLMD,LWS bridge;
   class K8S,CTD base;
 ```
@@ -111,6 +114,8 @@ flowchart LR
 - [NVIDIA/k8s-device-plugin](https://github.com/NVIDIA/k8s-device-plugin)
 - [NVIDIA/dcgm-exporter](https://github.com/NVIDIA/dcgm-exporter)
 - [NVIDIA/nvidia-container-toolkit](https://github.com/NVIDIA/nvidia-container-toolkit)
+- [NVIDIA/nvrc](https://github.com/NVIDIA/nvrc) — NVIDIA Runtime Container Init，
+  Kata Containers GPU microVM 内的最小 PID 1
 - [NVIDIA/NVSentinel](https://github.com/NVIDIA/NVSentinel)
 - [NVIDIA/aicr](https://github.com/NVIDIA/aicr)
 - [NVIDIA/TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM)
