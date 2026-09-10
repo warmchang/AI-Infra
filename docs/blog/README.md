@@ -1,7 +1,7 @@
 ---
 status: Active
 maintainer: pacoxu
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 tags: blog, kubernetes, ai-infrastructure
 ---
 
@@ -11,6 +11,23 @@ Older posts have been archived to [docs/archive-blog](../archive-blog/README.md)
 
 This directory contains blog posts and articles about AI infrastructure,
 Kubernetes scheduling, and related topics.
+
+## 2026-09-10: 从 DRA 到集群升级：AI Infra 交流中的七个工程问题
+
+- [从 DRA 到集群升级：AI Infra 交流中的七个工程问题 (Chinese)](./2026-09-10/2026-09-10-workshop-kubecon-ai-infra-takeaways_zh.md)
+
+A sanitized, team-oriented synthesis of Workshop and KubeCon discussions:
+
+- Separates durable engineering takeaways from unverified roadmap or vendor
+  statements
+- Frames DRA adoption around version compatibility, Device Plugin migration,
+  and the scheduler/Kubelet/driver responsibility boundary
+- Maps two-level scheduling across queue admission, workload-level placement,
+  DRA allocation, and node-local device preparation
+- Turns GPU sandbox and cold-start observations into measurable benchmark
+  stages
+- Connects immutable-node upgrades, strict maintenance windows, List/Watch
+  bursts, etcd pressure, DRANET, and CEL guardrails to concrete follow-up work
 
 ## 2026-06-15: KEP-766 DisaggregatedSet 深入解读：为何对 AI 工作负载重要
 
